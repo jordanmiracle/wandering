@@ -11,8 +11,11 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
 from pathlib import Path
+import os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
+from django.conf.urls import static
+
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 
@@ -25,7 +28,7 @@ SECRET_KEY = 'django-insecure-v^@ez7$@tfise67+!mllzj*te+ko9hspi!vs-x7(fcu#vt6(!8
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -122,15 +125,15 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    BASE_DIR / "static",
+    os.path.join(BASE_DIR, 'static')
 ]
 
 STATICFILES = [
     BASE_DIR / 'static'
 ]
 
-MEDIA_ROOT = BASE_DIR / 'static/images'
-MEDIA_URL = '/media/images/'
+MEDIA_ROOT = BASE_DIR / 'static/img'
+MEDIA_URL = '/img/'
 
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'
