@@ -2595,8 +2595,8 @@ input[type="button"]:disabled,
     justify-content: space-between;
     background-color: #1f1815;
     background-attachment: scroll, scroll;
-    background-image: url("../images/couple-header-image(half-size-cropped).webp"), url("../images/couple-header-image(half-size-cropped).webp");
-    background-position: top left, top left;
+    background-image: url("../images/couple-header-image(couple-moved-image-cropped).webp"), url("../images/couple-header-image(couple-moved-image-cropped).webp");
+    background-position: top;
     background-repeat: repeat, no-repeat;
     background-size: auto, 100%;
     color: rgba(255, 255, 255, 0.5);
@@ -2691,7 +2691,7 @@ input[type="button"]:disabled,
 }
 
 #main > section {
-    border-top: solid 2px #efefef;
+    border-top: solid 2px #285575;
     margin: 4em 0 0 0;
     padding: 4em 0 0 0;
 }
@@ -2971,7 +2971,7 @@ body.is-touch .image.thumb:after {
 
 body.is-touch #header {
     background-attachment: scroll;
-    background-size: auto, cover;
+    background-size: cover;
 }
 
 body.is-touch .poptrox-popup .nav-next,
