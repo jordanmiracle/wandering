@@ -122,3 +122,8 @@ GitHub.sublime-settings
 !.vscode/launch.json
 !.vscode/extensions.json
 .history
+
+# Vue Build #
+/frontend/build/
+node_modules
+/frontend/build/templates/

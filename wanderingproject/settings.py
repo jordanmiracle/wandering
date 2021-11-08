@@ -36,7 +36,8 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 INSTALLED_APPS = [
     'wanderingapp',
     'webpack_loader',
-    #'wanderingvue',
+    'rest_framework',
+    'corsheaders',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -48,6 +49,7 @@ INSTALLED_APPS = [
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -55,12 +57,17 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+CORS_ORIGIN_WHITELIST = (
+    'http://127.0.0.1:8080',
+)
+
 ROOT_URLCONF = 'wanderingproject.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(BASE_DIR, 'templates'),
+                 os.path.join(BASE_DIR, 'frontend/build/templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -126,15 +133,15 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'assets'),
-    os.path.join(BASE_DIR, 'wanderingvue/dist'),
-    os.path.join(BASE_DIR, 'static')
+    os.path.join(BASE_DIR, 'frontend/build/static'),
+    os.path.join(BASE_DIR, 'static'),
+    os.path.join(BASE_DIR, 'wanderingapp/static')
 ]
 
 WEBPACK_LOADER = {
     'DEFAULT': {
         'BUNDLE_DIR_NAME': 'dist/',
-        'STATS_FILE': os.path.join(BASE_DIR, 'wanderingvue', 'webpack-stats.json')
+        'STATS_FILE': os.path.join(BASE_DIR, 'frontend', 'webpack-stats.json')
     }
 }
 
@@ -146,7 +153,7 @@ MEDIA_ROOT = BASE_DIR / 'static/img'
 MEDIA_URL = '/img/'
 
 
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+#STATIC_ROOT = 'var/static'
 
 
 # Default primary key field type

@@ -2595,8 +2595,8 @@ input[type="button"]:disabled,
     justify-content: space-between;
     background-color: #1f1815;
     background-attachment: scroll, scroll;
-    background-image: url("../images/couple-header-image(couple-moved-image-cropped).webp"), url("../images/couple-header-image(couple-moved-image-cropped).webp");
-    background-position: top;
+    background-image: url("../images/couple-on-left.webp"), url("../images/couple-on-left.webp");
+    background-position: top left;
     background-repeat: repeat, no-repeat;
     background-size: auto, 100%;
     color: rgba(255, 255, 255, 0.5);
