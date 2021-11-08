@@ -35,9 +35,9 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 INSTALLED_APPS = [
     'wanderingapp',
-    'webpack_loader',
     'rest_framework',
-    'corsheaders',
+    'schedule',
+    'djangobower',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -57,20 +57,17 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
-CORS_ORIGIN_WHITELIST = (
-    'http://127.0.0.1:8080',
-)
 
 ROOT_URLCONF = 'wanderingproject.urls'
 
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates'),
-                 os.path.join(BASE_DIR, 'frontend/build/templates')],
+        'DIRS': [],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
+                'django.template.context_processors.request',
                 'django.template.context_processors.debug',
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
@@ -133,17 +130,9 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'frontend/build/static'),
-    os.path.join(BASE_DIR, 'static'),
     os.path.join(BASE_DIR, 'wanderingapp/static')
 ]
 
-WEBPACK_LOADER = {
-    'DEFAULT': {
-        'BUNDLE_DIR_NAME': 'dist/',
-        'STATS_FILE': os.path.join(BASE_DIR, 'frontend', 'webpack-stats.json')
-    }
-}
 
 STATICFILES = [
     BASE_DIR / 'static'
@@ -152,6 +141,14 @@ STATICFILES = [
 MEDIA_ROOT = BASE_DIR / 'static/img'
 MEDIA_URL = '/img/'
 
+STATIC_ROOT = 'staticfiles'
+BOWER_COMPONENTS_ROOT = BASE_DIR/ 'components/'
+
+BOWER_INSTALLED_APPS = (
+    'jquery',
+    'jquery-ui',
+    'bootstrap'
+)
 
 #STATIC_ROOT = 'var/static'
 

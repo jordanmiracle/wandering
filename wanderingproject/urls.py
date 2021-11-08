@@ -20,14 +20,7 @@ from django.shortcuts import render
 from wanderingapp import views
 
 
-vue_urls = [
-  path('', lambda request: HttpResponse(render(request, 'vue_index.html'))),
-  path('another-path/', lambda request: HttpResponse(render(request, 'vue_index.html'))),
-]
-
-
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
-    path('vue_home/', include(vue_urls))
 ]
