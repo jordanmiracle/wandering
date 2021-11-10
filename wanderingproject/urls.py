@@ -19,8 +19,11 @@ from django.http import HttpResponse
 from django.shortcuts import render
 from wanderingapp import views
 
+app_name = 'wanderingapp'
+
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
+
 ]

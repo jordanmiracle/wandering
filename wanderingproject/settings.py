@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'schedule',
     'djangobower',
+    'ckeditor',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -130,24 +131,25 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'wanderingapp/static')
+    os.path.join(BASE_DIR, 'static')
 ]
-
 
 STATICFILES = [
     BASE_DIR / 'static'
 ]
 
+#STATICFILES_FINDERS = 'djangobower.finders.BowerFinder'
+
 MEDIA_ROOT = BASE_DIR / 'static/img'
 MEDIA_URL = '/img/'
 
 STATIC_ROOT = 'staticfiles'
-BOWER_COMPONENTS_ROOT = BASE_DIR/ 'components/'
+BOWER_COMPONENTS_ROOT = BASE_DIR / 'components'
 
 BOWER_INSTALLED_APPS = (
     'jquery',
     'jquery-ui',
-    'bootstrap'
+    'bootstrap',
 )
 
 #STATIC_ROOT = 'var/static'

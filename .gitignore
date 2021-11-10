@@ -126,4 +126,5 @@ GitHub.sublime-settings
 # Vue Build #
 /frontend/build/
 node_modules
+/node_modules
 /frontend/build/templates/
