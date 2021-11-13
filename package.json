@@ -1,0 +1,32 @@
+{
+  "name": "wandering",
+  "version": "1.0.0",
+  "description": "Wandering Waters App",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jordanmiracle/wandering.git"
+  },
+  "devDependencies": {
+    "autoprefixer": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "babelify": "^7.3.0",
+    "browserify": "^14.4.0",
+    "node-sass": "^4.5.3",
+    "postcss-cli": "^4.1.0"
+  },
+  "author": "Jordan Miracle",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jordanmiracle/wandering/issues"
+  },
+  "homepage": "https://github.com/jordanmiracle/wandering#readme",
+  "dependencies": {
+    "@fullcalendar/core": "^5.10.1",
+    "@fullcalendar/vue3": "^5.10.1",
+    "fullcalendar": "^5.10.1"
+  }
+}
