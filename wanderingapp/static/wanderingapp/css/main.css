@@ -101,7 +101,7 @@ body.is-preload *, body.is-preload *:before, body.is-preload *:after {
 
 body, input, select, textarea {
     color: #a2a2a2;
-    font-family: "Source Sans Pro", Helvetica, sans-serif;
+    font-family: "Crimson Text", sans-serif;
     font-size: 16pt;
     font-weight: 400;
     line-height: 1.75em;
@@ -2608,6 +2608,12 @@ input[type="button"]:disabled,
     top: 0;
     width: 35%;
 }
+
+#title {
+    font-size: 1.5em;
+    font-family: 'Playfair Display', serif;
+}
+
 
 #header > * {
     -moz-flex-shrink: 0;

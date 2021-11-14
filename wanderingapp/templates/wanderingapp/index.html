@@ -11,6 +11,11 @@
     <script src="https://www.jsdelivr.com/package/npm/fullcalendar"></script>
     <link href="{% static 'fullcalendar/main.css' %}" rel="stylesheet"/>
     <link href="{% static 'wanderingapp/css/fontawesome-all.min.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap"
+          rel="stylesheet">
+    rel="stylesheet">
     <script src="{% static 'fullcalendar/main.js' %}"></script>
     <script type="text/javascript" src="{% static 'fullcalendar/gcal.js' %}"></script>
     <script>
@@ -38,9 +43,10 @@
 <header id="header">
 
     <div class="inner">
-        <h1><strong>Wandering Waters</strong><br/>
+        <div id="title">
+            <h1><strong>Wandering<br/><em>Waters</em></strong><br/></h1>
             <br/>
-        </h1>
+        </div>
         <h4>Celebration and Ceremony in the North Cascades Foothills</h4>
     </div>
 </header>
@@ -76,22 +82,23 @@
     <section id="two">
         <h2>What We Provide</h2>
         <div class="row">
+
             <article class="col-6 col-12-xsmall work-item">
-                <a href="{% static 'images/fulls/01.jpg' %}" class="image fit thumb"><img
-                        src="{% static 'wanderingapp/images/openfield-couple.webp' %}" alt=""/></a>
-                <h3>Magna sed consequat tempus</h3>
-                <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
-            </article>
-            <article class="col-6 col-12-xsmall work-item">
-                <a href="{% static 'images/fulls/02.jpg' %}" class="image fit thumb"><img
+                <a href="{% static 'wanderingapp/images/pavilion-at-night.webp' %}" class="image fit thumb"><img
                         src="{% static 'wanderingapp/images/pavilion-at-night.webp' %}" alt=""/></a>
                 <h3>Ultricies lacinia interdum</h3>
                 <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
             </article>
             <article class="col-6 col-12-xsmall work-item">
-                <a href="{% static 'images/fulls/03.jpg' %}" class="image fit thumb"><img
-                        src="{% static 'wanderingapp/images/thumbs/03.jpg' %}" alt=""/></a>
+                <a href="{% static 'wanderingapp/images/wedding-reworked-30.webp' %}" class="image fit thumb"><img
+                        src="{% static 'wanderingapp/images/wedding-reworked-30.webp' %}" alt=""/></a>
                 <h3>Tortor metus commodo</h3>
+                <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
+            </article>
+            <article class="col-6 col-12-xsmall work-item">
+                <a href="{% static 'wanderingapp/images/openfield-couple.webp' %}" class="image fit thumb"><img
+                        src="{% static 'wanderingapp/images/openfield-couple.webp' %}" alt=""/></a>
+                <h3>Magna sed consequat tempus</h3>
                 <p>Lorem ipsum dolor sit amet nisl sed nullam feugiat.</p>
             </article>
             <article class="col-6 col-12-xsmall work-item">
