@@ -2597,7 +2597,7 @@ input[type="button"]:disabled,
     background-attachment: scroll, scroll;
     background-image: url("../images/couple-on-left_w_1400(cropped).webp"), url("../images/couple-on-left_w_1400(cropped).webp");
     background-position: top left, top left;
-    background-repeat: repeat, no-repeat;
+    background-repeat: no-repeat;
     background-size: auto, 150%;
     color: rgba(255, 255, 255, 0.5);
     height: 100%;
@@ -2610,8 +2610,14 @@ input[type="button"]:disabled,
 }
 
 #title {
-    font-size: 1.5em;
-    font-family: 'Playfair Display', serif;
+    font-family: 'Alex Brush', serif;
+    height: 60px;
+    width: 60px;
+    line-height: 60px;
+    -moz-border-radius: 30px; /* or 50% */
+    border-radius: 30px; /* or 50% */
+    color: white;
+    font-size: 2em;
 }
 
 
