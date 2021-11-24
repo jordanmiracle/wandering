@@ -1,4 +1,6 @@
 {% load static %}
+{% load sass_tags %}
+
 <!DOCTYPE HTML>
 
 <html lang="en">
@@ -7,9 +9,10 @@
     <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
     <link rel="stylesheet" href="{% static 'wanderingapp/css/main.css' %}"/>
-
+    <link rel="stylesheet" href="{% static 'wanderingapp/css/main.scss' %}">
     <link href="{% static 'fullcalendar/main.css' %}" rel="stylesheet"/>
-    <link href="{% static 'wanderingapp/css/fontawesome-all.min.css' %}">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/solid.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
@@ -32,6 +35,25 @@
             });
             calendar.render();
         });
+    </script>
+    <script>
+        const modal = document.querySelector(".modal");
+        const trigger = document.querySelector(".trigger");
+        const closeButton = document.querySelector(".close-button");
+
+        function toggleModal() {
+            modal.classList.toggle("show-modal");
+        }
+
+        function windowOnClick(event) {
+            if (event.target === modal) {
+                toggleModal();
+            }
+        }
+
+        trigger.addEventListener("click", toggleModal);
+        closeButton.addEventListener("click", toggleModal);
+        window.addEventListener("click", windowOnClick);
     </script>
     <style>
         .modal {
@@ -111,6 +133,7 @@
 
             }
         }
+
     </style>
 </head>
 <body class="is-preload">
@@ -122,7 +145,7 @@
         <div id="title">
             <h1>Wandering Waters</h1>
 
-    </div>
+        </div>
 </header>
 
 <!-- Main -->
@@ -175,12 +198,11 @@
                             trucks, and bathrooms with flush toilets.</h3>
                     </div>
                 </div>
-
-
             </article>
+
             <article class="col-6 col-12-xsmall work-item">
-                <a href="{% static 'wanderingapp/images/wedding-reworked-30.webp' %}" class="image fit thumb"><img
-                        src="{% static 'wanderingapp/images/wedding-reworked-30.webp' %}" alt=""/></a>
+                <a href="{% static 'wanderingapp/images/ceremony-area-from-above.webp' %}" class="image fit thumb"><img
+                        src="{% static 'wanderingapp/images/ceremony-area-from-above.webp' %}" alt=""/></a>
                 <h3>Apart from our beautiful and natural surroundings, we provide outdoor covered seating and dining
                     areas.</h3>
                 <button class="trigger">Details</button>
@@ -198,8 +220,8 @@
                 </div>
             </article>
             <article class="col-6 col-12-xsmall work-item">
-                <a href="{% static 'wanderingapp/images/openfield-couple.webp' %}" class="image fit thumb"><img
-                        src="{% static 'wanderingapp/images/openfield-couple.webp' %}" alt=""/></a>
+                <a href="{% static 'wanderingapp/images/mariahjon124.jpg' %}" class="image fit thumb"><img
+                        src="{% static 'wanderingapp/images/mariahjon124.jpg' %}" alt=""/></a>
                 <h3>Apart from our beautiful and natural surroundings, we provide outdoor covered seating and dining
                     areas.</h3>
                 <button class="trigger">Details</button>
@@ -217,8 +239,8 @@
                 </div>
             </article>
             <article class="col-6 col-12-xsmall work-item">
-                <a href="{% static 'images/fulls/04.jpg' %}" class="image fit thumb"><img
-                        src="{% static 'wanderingapp/images/thumbs/04.jpg' %}" alt=""/></a>
+                <a href="{% static 'wanderingapp/images/venue-overview.jpg' %}" class="image fit thumb"><img
+                        src="{% static 'wanderingapp/images/venue-overview.jpg' %}" alt=""/></a>
                 <h3>Apart from our beautiful and natural surroundings, we provide outdoor covered seating and dining
                     areas.</h3>
                 <button class="trigger">Details</button>
@@ -237,7 +259,7 @@
             </article>
             <article class="col-6 col-12-xsmall work-item">
                 <a href="{% static 'images/fulls/05.jpg' %}" class="image fit thumb"><img
-                        src="{% static 'wanderingapp/images/thumbs/05.jpg' %}" alt=""/></a>
+                        src="{% static 'wanderingapp/images/ceremony-area-from-above.png' %}" alt=""/></a>
                 <h3>Apart from our beautiful and natural surroundings, we provide outdoor covered seating and dining
                     areas.</h3>
                 <button class="trigger">Details</button>
@@ -274,9 +296,7 @@
                 </div>
             </article>
         </div>
-        <ul class="actions">
-            <li><a href="#" class="button">Full Portfolio</a></li>
-        </ul>
+
     </section>
 
     <!-- Three -->
@@ -639,7 +659,15 @@
 <footer id="footer">
     <div class="inner">
         <ul class="icons">
-            <li><a href="#" class="icon solid fa-envelope"><span class="label">Email</span></a></li>
+            <li>
+                <img src="{% static 'wanderingapp/icons/facebook.svg' %}" height=25px width="25px" alt="Facebook">
+            </li>
+            <li>
+                <img src="{% static 'wanderingapp/icons/email.svg' %}" height=25px width="25px" alt="Facebook">
+            </li>
+        </ul>
+        <ul>
+
         </ul>
         <ul class="copyright">
             <li>&copy; Wandering Waters</li>
@@ -649,25 +677,7 @@
 </footer>
 
 <!-- Scripts -->
-<script>
-    const modal = document.querySelector(".modal");
-    const trigger = document.querySelector(".trigger");
-    const closeButton = document.querySelector(".close-button");
 
-    function toggleModal() {
-        modal.classList.toggle("show-modal");
-    }
-
-    function windowOnClick(event) {
-        if (event.target === modal) {
-            toggleModal();
-        }
-    }
-
-    trigger.addEventListener("click", toggleModal);
-    closeButton.addEventListener("click", toggleModal);
-    window.addEventListener("click", windowOnClick);
-</script>
 <script src="{% static 'wanderingapp/js/jquery.min.js' %}"></script>
 <script src="{% static 'wanderingapp/js/jquery.poptrox.min.js' %}"></script>
 <script src="{% static 'wanderingapp/js/browser.min.js' %}"></script>

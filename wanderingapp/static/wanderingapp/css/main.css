@@ -287,8 +287,11 @@ pre code {
     .container {
         max-width: calc(100% - 3em);
     }
-
 }
+
+    #header {
+
+    }
 
 /* Row */
 
@@ -1792,7 +1795,32 @@ header h6 + p {
 
 header.major h2 {
     font-size: 2em;
+    border-bottom: 2px solid currentColor;
+    border-radius: 2px;
+    display: inline-block;
+    line-height: 1.85;
+    text-shadow: 2px 2px white,
+    2px -2px white,
+    -2px 2px white,
+    -2px -2px white;
+    text-align: center;
 }
+
+@media (min-width: 736px) {
+    header.major h2 {
+    font-size: 2em;
+    border-bottom: 2px solid currentColor;
+    border-radius: 2px;
+    display: inline-block;
+    line-height: 1.85;
+    text-shadow: 2px 2px white,
+    2px -2px white,
+    -2px 2px white,
+    -2px -2px white;
+    text-align: center;
+}
+}
+
 
 /* Form */
 
@@ -1801,7 +1829,7 @@ form {
 }
 
 label {
-    color: #787878;
+    color: #787878;;
     display: block;
     font-size: 0.9em;
     font-weight: 400;
@@ -2049,7 +2077,7 @@ input[type="radio"] + label:before {
     -webkit-transition: opacity 0.2s ease-in-out;
     -ms-transition: opacity 0.2s ease-in-out;
     transition: opacity 0.2s ease-in-out;
-    background: url("images/overlay.png");
+    background: url("../images/overlay.png");
     border-radius: 0.35em;
     content: '';
     display: block;
@@ -2637,9 +2665,8 @@ input[type="button"]:disabled,
     line-height: 1.75em;
     margin: 0;
     font-family: 'Satisfy', serif;
-    font-size: 2.5em;
+    font-size: 2.9em;
     text-align: left;
-
 }
 
 #title {
