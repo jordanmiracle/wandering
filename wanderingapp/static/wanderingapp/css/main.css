@@ -2636,17 +2636,13 @@ input[type="button"]:disabled,
 
 @media screen and (max-width: 360px) {
     #header {
-        background-image: url("../images/couple-on-left_w_200.webp")
+        background-image: url("../images/couple-on-left_w_200.webp");
         background-size: 100% auto;
 
     }
 }
 
-@media screen and (max-width: 768px) {
-    #header {
-        background-image: url("../images/couple-on-left_w_627.webp")
-    }
-}
+@media screen and (min-width: 768px) {}
 
 
 #header > * {
@@ -3096,7 +3092,7 @@ body.is-touch .poptrox-popup .closer {
     #header {
         background-attachment: scroll;
         background-position: center;
-        background-size: auto, cover;
+        background-size: 100% auto;
         left: auto;
         padding: 6em 4em;
         position: relative;
