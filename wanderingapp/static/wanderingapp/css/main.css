@@ -2621,7 +2621,7 @@ input[type="button"]:disabled,
     background-image: url("../images/couple-on-left.webp");
     background-position: top left, top left;
     background-repeat: repeat, no-repeat;
-    background-size: auto, 100vh;
+    background-size: cover;
     color: rgba(255, 255, 255, 0.5);
     height: 100%;
     left: 0;
