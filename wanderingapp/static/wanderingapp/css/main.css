@@ -79,7 +79,7 @@ html {
 }
 
 body {
-    background: #fff;
+    background: #F6EDDF;
 }
 
 body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -1809,7 +1809,7 @@ header.major h2 {
         font-size: 2em;
         border-bottom: 2px solid currentColor;
         border-radius: 2px;
-        display: inline-block;
+        display: block;
         line-height: 1.85;
         text-shadow: 2px 2px white,
         2px -2px white,
@@ -2119,7 +2119,7 @@ input[type="radio"] + label:before {
 }
 
 .image.thumb:hover:before {
-    background: url("images/overlay.png"), url("images/overlay.png");
+    background: url("../images/overlay.png"), url("../images/overlay.png");
     opacity: 1.0;
 }
 
@@ -2730,6 +2730,7 @@ input[type="button"]:disabled,
     max-width: 54em;
     padding: 8em 4em 4em 4em;
     width: calc(100% - 35%);
+    background-image: url("../images/white-background-vines.jpg");
 }
 
 #main > section {
