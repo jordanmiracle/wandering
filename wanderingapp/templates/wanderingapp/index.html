@@ -36,25 +36,6 @@
             calendar.render();
         });
     </script>
-    <script>
-        const modal = document.querySelector(".modal");
-        const trigger = document.querySelector(".trigger");
-        const closeButton = document.querySelector(".close-button");
-
-        function toggleModal() {
-            modal.classList.toggle("show-modal");
-        }
-
-        function windowOnClick(event) {
-            if (event.target === modal) {
-                toggleModal();
-            }
-        }
-
-        trigger.addEventListener("click", toggleModal);
-        closeButton.addEventListener("click", toggleModal);
-        window.addEventListener("click", windowOnClick);
-    </script>
     <style>
         .modal {
             position: fixed;
@@ -676,7 +657,25 @@
 </footer>
 
 <!-- Scripts -->
+<script>
+    const modal = document.querySelector(".modal");
+    const trigger = document.querySelector(".trigger");
+    const closeButton = document.querySelector(".close-button");
 
+    function toggleModal() {
+        modal.classList.toggle("show-modal");
+    }
+
+    function windowOnClick(event) {
+        if (event.target === modal) {
+            toggleModal();
+        }
+    }
+
+    trigger.addEventListener("click", toggleModal);
+    closeButton.addEventListener("click", toggleModal);
+    window.addEventListener("click", windowOnClick);
+</script>
 <script src="{% static 'wanderingapp/js/jquery.min.js' %}"></script>
 <script src="{% static 'wanderingapp/js/jquery.poptrox.min.js' %}"></script>
 <script src="{% static 'wanderingapp/js/browser.min.js' %}"></script>
