@@ -10,113 +10,106 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
     <link rel="stylesheet" href="{% static 'wanderingapp/css/main.css' %}"/>
     <link rel="stylesheet" href="{% static 'wanderingapp/css/main.scss' %}">
-    <link href="{% static 'fullcalendar/main.css' %}" rel="stylesheet"/>
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/solid.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Satisfy&display=swap" rel="stylesheet">
+    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.5.1/main.min.css' rel='stylesheet'/>
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.5.1/main.min.js'></script>
+</head>
+<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"/>
+<link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/solid.css"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
+<link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Satisfy&display=swap" rel="stylesheet">
 
-    <script>
-    </script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            var calendarEL = document.getElementById('calendar');
+<script>
+</script>
+<style>
 
-            var calendar = new FullCalendar.Calendar(calendarEL, {
-                googleCalendarApiKey: 'AIzaSyCNtXiz0hFqZTRlvdAeAQvf5-40hJRphBM',
-                eventSources: [
-                    {
-                        googleCalendarId: '6ulbb1tb1o050qsak7lf9sp77k@group.calendar.google.com',
-                    }
-                ],
-                initialView: 'dayGridMonth'
-            });
-            calendar.render();
-        });
-    </script>
-    <style>
-        .modal {
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            opacity: 0;
-            visibility: hidden;
-            transform: scale(1.1);
-            transition: visibility 0s linear 0.5s, opacity 0.25s 0s, transform 0.25s;
-            z-index: 10;
+    #calendar {
+        max-width: 1100px;
+        margin: 0 auto;
+    }
+
+    .modal {
+        position: fixed;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        opacity: 0;
+        visibility: hidden;
+        transform: scale(1.1);
+        transition: visibility 0s linear 0.5s, opacity 0.25s 0s, transform 0.25s;
+        z-index: 10;
+    }
+
+    .modal-content {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background-color: white;
+        padding: 1rem 1.5rem;
+        width: 24rem;
+        border-radius: 0.5rem;
+    }
+
+    .close-button {
+        float: right;
+        width: 1.5rem;
+        line-height: 1.5rem;
+        text-align: center;
+        cursor: pointer;
+        border-radius: 0.25rem;
+        background-color: lightgray;
+    }
+
+    .close-button:hover {
+        background-color: darkgray;
+    }
+
+    .show-modal {
+        opacity: 1;
+        visibility: visible;
+        transform: scale(1.0);
+        transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
+    }
+
+    .trigger {
+        display: inline-block;
+        padding: 0.35em 1.2em;
+        border: 0.1em solid #FFFFFF;
+        margin: 0 0.3em 0.3em 0;
+        border-radius: 0.5em;
+        box-sizing: border-box;
+        text-decoration: none;
+        font-family: 'Crimson Text', sans-serif;
+        font-weight: 300;
+        color: #ECE5D5;
+        background-color: #30332E;
+        text-align: center;
+        transition: all 0.2s;
+    }
+
+    .trigger:hover {
+        color: #73A5D9;
+        background-color: #fefefe;
+        border-color: #30332E;
+        cursor: pointer;
+        position: center;
+    }
+
+    @media all and (max-width: 30em) {
+        a.trigger {
+            display: block;
+            margin: 0.4em auto;
+
         }
-
-        .modal-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: white;
-            padding: 1rem 1.5rem;
-            width: 24rem;
-            border-radius: 0.5rem;
-        }
-
-        .close-button {
-            float: right;
-            width: 1.5rem;
-            line-height: 1.5rem;
-            text-align: center;
-            cursor: pointer;
-            border-radius: 0.25rem;
-            background-color: lightgray;
-        }
-
-        .close-button:hover {
-            background-color: darkgray;
-        }
-
-        .show-modal {
-            opacity: 1;
-            visibility: visible;
-            transform: scale(1.0);
-            transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
-        }
-
-        .trigger {
-            display: inline-block;
-            padding: 0.35em 1.2em;
-            border: 0.1em solid #FFFFFF;
-            margin: 0 0.3em 0.3em 0;
-            border-radius: 0.5em;
-            box-sizing: border-box;
-            text-decoration: none;
-            font-family: 'Crimson Text', sans-serif;
-            font-weight: 300;
-            color: #ECE5D5;
-            background-color: #30332E;
-            text-align: center;
-            transition: all 0.2s;
-        }
-
-        .trigger:hover {
-            color: #73A5D9;
-            background-color: #fefefe;
-            border-color: #30332E;
-            cursor: pointer;
-            position: center;
-        }
-
-        @media all and (max-width: 30em) {
-            a.trigger {
-                display: block;
-                margin: 0.4em auto;
-
-            }
-        }
-    </style>
+    }
+</style>
 </head>
 <body class="is-preload">
+
 
 <!-- Header -->
 <header id="header">
@@ -181,6 +174,45 @@
             </article>
 
             <article class="col-6 col-12-xsmall work-item">
+                <a href="{% static 'wanderingapp/images/venue-overview.jpg' %}" class="image fit thumb"><img
+                        src="{% static 'wanderingapp/images/venue-overview.jpg' %}" alt=""/></a>
+                <h3>Apart from our beautiful and natural surroundings, we provide outdoor covered seating and dining
+                    areas.</h3>
+                <button class="trigger">Details</button>
+                <div class="modal">
+                    <div class="modal-content">
+                        <span class="close-button">&times;</span>
+                        <h3>To shelter guests there is a 24’ x 36’ party pavilion and an accessory shelter measuring
+                            15’ x
+                            20’. There is a covered bar for beverage service, a functional outdoor kitchen, a
+                            secondary food
+                            truck kitchen, a covered stage for music, a covered fire pit, water and power hook up
+                            for food
+                            trucks, and bathrooms with flush toilets.</h3>
+                    </div>
+                </div>
+            </article>
+            <article class="col-6 col-12-xsmall work-item">
+                <a href="{% static 'wanderingapp/images/wedding-reworked-30.webp' %}" class="image fit thumb"><img
+                        src="{% static 'wanderingapp/images/wedding-reworked-30.webp' %}" alt=""/></a>
+
+                <h3>Apart from our beautiful and natural surroundings, we provide outdoor covered seating and dining
+                    areas.</h3>
+                <button class="trigger">Details</button>
+                <div class="modal">
+                    <div class="modal-content">
+                        <span class="close-button">&times;</span>
+                        <h3>To shelter guests there is a 24’ x 36’ party pavilion and an accessory shelter measuring
+                            15’ x
+                            20’. There is a covered bar for beverage service, a functional outdoor kitchen, a
+                            secondary food
+                            truck kitchen, a covered stage for music, a covered fire pit, water and power hook up
+                            for food
+                            trucks, and bathrooms with flush toilets.</h3>
+                    </div>
+                </div>
+            </article>
+            <article class="col-6 col-12-xsmall work-item">
                 <a href="{% static 'wanderingapp/images/ceremony-area-from-above.webp' %}" class="image fit thumb"><img
                         src="{% static 'wanderingapp/images/ceremony-area-from-above.webp' %}" alt=""/></a>
                 <h3>Apart from our beautiful and natural surroundings, we provide outdoor covered seating and dining
@@ -219,46 +251,8 @@
                 </div>
             </article>
             <article class="col-6 col-12-xsmall work-item">
-                <a href="{% static 'wanderingapp/images/venue-overview.jpg' %}" class="image fit thumb"><img
-                        src="{% static 'wanderingapp/images/venue-overview.jpg' %}" alt=""/></a>
-                <h3>Apart from our beautiful and natural surroundings, we provide outdoor covered seating and dining
-                    areas.</h3>
-                <button class="trigger">Details</button>
-                <div class="modal">
-                    <div class="modal-content">
-                        <span class="close-button">&times;</span>
-                        <h3>To shelter guests there is a 24’ x 36’ party pavilion and an accessory shelter measuring
-                            15’ x
-                            20’. There is a covered bar for beverage service, a functional outdoor kitchen, a
-                            secondary food
-                            truck kitchen, a covered stage for music, a covered fire pit, water and power hook up
-                            for food
-                            trucks, and bathrooms with flush toilets.</h3>
-                    </div>
-                </div>
-            </article>
-            <article class="col-6 col-12-xsmall work-item">
-                <a href="{% static 'images/fulls/05.jpg' %}" class="image fit thumb"><img
-                        src="{% static 'wanderingapp/images/ceremony-area-from-above.png' %}" alt=""/></a>
-                <h3>Apart from our beautiful and natural surroundings, we provide outdoor covered seating and dining
-                    areas.</h3>
-                <button class="trigger">Details</button>
-                <div class="modal">
-                    <div class="modal-content">
-                        <span class="close-button">&times;</span>
-                        <h3>To shelter guests there is a 24’ x 36’ party pavilion and an accessory shelter measuring
-                            15’ x
-                            20’. There is a covered bar for beverage service, a functional outdoor kitchen, a
-                            secondary food
-                            truck kitchen, a covered stage for music, a covered fire pit, water and power hook up
-                            for food
-                            trucks, and bathrooms with flush toilets.</h3>
-                    </div>
-                </div>
-            </article>
-            <article class="col-6 col-12-xsmall work-item">
-                <a href="{% static 'images/fulls/06.jpg' %}" class="image fit thumb"><img
-                        src="{% static 'images/thumbs/06.jpg' %}" alt=""/></a>
+                <a href="{% static 'wanderingapp/images/Joe_MarinWedding-220(cropped).webp' %}" class="image fit thumb"><img
+                        src="{% static 'wanderingapp/images/Joe_MarinWedding-220(cropped).webp' %}" alt=""/></a>
                 <h3>Apart from our beautiful and natural surroundings, we provide outdoor covered seating and dining
                     areas.</h3>
                 <button class="trigger">Details</button>
@@ -283,6 +277,7 @@
     <section id="three">
         <h2>Get In Touch</h2>
         <div id="calendar">
+
         </div>
 
     </section>
@@ -418,7 +413,7 @@
                 <h4>Table</h4>
                 <h5>Default</h5>
                 <div class="table-wrapper">
-                    <table>
+                    <table class="original-table">
                         <thead>
                         <tr>
                             <th>Name</th>
@@ -636,27 +631,22 @@
 
 </div>
 <!-- Footer -->
-<footer id="footer">
-    <div class="inner">
-        <ul class="icons">
-            <li>
-                <img src="{% static 'wanderingapp/icons/facebook.svg' %}" height=25px width="25px" alt="Facebook">
-            </li>
-            <li>
-                <img src="{% static 'wanderingapp/icons/email.svg' %}" height=25px width="25px" alt="Facebook">
-            </li>
-        </ul>
-        <ul>
 
-        </ul>
-        <ul class="copyright">
-            <li>&copy; Wandering Waters</li>
-        </ul>
-
-    </div>
-</footer>
 
 <!-- Scripts -->
+
+<script src="{% static 'wanderingapp/js/jquery.min.js' %}"></script>
+<script src="{% static 'wanderingapp/js/jquery.poptrox.min.js' %}"></script>
+<script src="{% static 'wanderingapp/js/browser.min.js' %}"></script>
+<script src="{% static 'wanderingapp/js/breakpoints.min.js' %}"></script>
+<script src="{% static 'wanderingapp/js/util.js' %}"></script>
+<script src="{% static 'wanderingapp/js/main.js' %}"></script>
+<script src="https://www.jsdelivr.com/package/npm/fullcalendar"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+<script src="{% static 'fullcalendar/main.js' %}"></script>
+<script type="text/javascript" src="{% static 'fullcalendar/gcal.js' %}"></script>
 <script>
     const modal = document.querySelector(".modal");
     const trigger = document.querySelector(".trigger");
@@ -676,18 +666,25 @@
     closeButton.addEventListener("click", toggleModal);
     window.addEventListener("click", windowOnClick);
 </script>
-<script src="{% static 'wanderingapp/js/jquery.min.js' %}"></script>
-<script src="{% static 'wanderingapp/js/jquery.poptrox.min.js' %}"></script>
-<script src="{% static 'wanderingapp/js/browser.min.js' %}"></script>
-<script src="{% static 'wanderingapp/js/breakpoints.min.js' %}"></script>
-<script src="{% static 'wanderingapp/js/util.js' %}"></script>
-<script src="{% static 'wanderingapp/js/main.js' %}"></script>
-<script src="https://www.jsdelivr.com/package/npm/fullcalendar"></script>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-        crossorigin="anonymous"></script>
-<script src="{% static 'fullcalendar/main.js' %}"></script>
-<script type="text/javascript" src="{% static 'fullcalendar/gcal.js' %}"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function () {
+        var calendarEL = document.getElementById('calendar');
 
+        var calendar = new FullCalendar.Calendar(calendarEL, {
+            height: "auto",
+            width: "100%",
+            handleWindowResize: true,
+            themeSystem: 'standard',
+            googleCalendarApiKey: 'AIzaSyCNtXiz0hFqZTRlvdAeAQvf5-40hJRphBM',
+            eventSources: [
+                {
+                    googleCalendarId: '6ulbb1tb1o050qsak7lf9sp77k@group.calendar.google.com',
+                }
+            ],
+            initialView: 'dayGridMonth'
+        });
+        calendar.render();
+    });
+</script>
 </body>
 </html>

@@ -7,7 +7,7 @@ pre, a, abbr, acronym, address, big, cite,
 code, del, dfn, em, img, ins, kbd, q, s, samp,
 small, strike, strong, sub, sup, tt, var, b,
 u, i, center, dl, dt, dd, ol, ul, li, fieldset,
-form, label, legend, table, caption, tbody,
+form, label, legend, caption, tbody,
 tfoot, thead, tr, th, td, article, aside,
 canvas, details, embed, figure, figcaption,
 footer, header, hgroup, menu, nav, output, ruby,
@@ -42,7 +42,7 @@ blockquote:before, blockquote:after, q:before, q:after {
     content: none;
 }
 
-table {
+.original-original-table{
     border-collapse: collapse;
     border-spacing: 0;
 }
@@ -79,7 +79,7 @@ html {
 }
 
 body {
-    background: #F6EDDF;
+    background: #FFFEEE;
 }
 
 body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -2152,6 +2152,7 @@ input[type="radio"] + label:before {
     display: block;
     margin: 0 0 2em 0;
     width: 100%;
+    background-image: url("../images/overlay.png")
 }
 
 .image.fit img {
@@ -2386,33 +2387,33 @@ ul.actions.fit.stacked {
 
 }
 
-/* Table */
+/* original-table*/
 
 .table-wrapper {
     -webkit-overflow-scrolling: touch;
     overflow-x: auto;
 }
 
-table {
+.original-table{
     margin: 0 0 2em 0;
     width: 100%;
 }
 
-table tbody tr {
+.original-table tbody tr {
     border: solid 1px #efefef;
     border-left: 0;
     border-right: 0;
 }
 
-table tbody tr:nth-child(2n + 1) {
+.original-table tbody tr:nth-child(2n + 1) {
     background-color: #f7f7f7;
 }
 
-table td {
+.original-tablet d {
     padding: 0.75em 0.75em;
 }
 
-table th {
+.original-table th {
     color: #787878;
     font-size: 0.9em;
     font-weight: 400;
@@ -2420,11 +2421,11 @@ table th {
     text-align: left;
 }
 
-table thead {
+.original-table thead {
     border-bottom: solid 2px #efefef;
 }
 
-table tfoot {
+.original-table tfoot {
     border-top: solid 2px #efefef;
 }
 
