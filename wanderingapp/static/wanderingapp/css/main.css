@@ -42,7 +42,7 @@ blockquote:before, blockquote:after, q:before, q:after {
     content: none;
 }
 
-.original-original-table{
+.original-original-table {
     border-collapse: collapse;
     border-spacing: 0;
 }
@@ -2394,7 +2394,7 @@ ul.actions.fit.stacked {
     overflow-x: auto;
 }
 
-.original-table{
+.original-table {
     margin: 0 0 2em 0;
     width: 100%;
 }
@@ -2643,7 +2643,6 @@ input[type="button"]:disabled,
 }
 
 
-
 #header > * {
     -moz-flex-shrink: 0;
     -webkit-flex-shrink: 0;
@@ -2678,7 +2677,59 @@ input[type="button"]:disabled,
 }
 
 #title {
+    display: inline-block;
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+    animation: fadeIn linear 4s;
+    -webkit-animation: fadeIn linear 4s;
+    -moz-animation: fadeIn linear 4s;
+    -o-animation: fadeIn linear 4s;
+    -ms-animation: fadeIn linear 4s;
+}
 
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-moz-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-o-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@-ms-keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
 }
 
 #header .image.avatar {
