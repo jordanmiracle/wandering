@@ -79,7 +79,7 @@ html {
 }
 
 body {
-    background: #FFFEEE;
+    background: #f6f6f3;
 }
 
 body.is-preload *, body.is-preload *:before, body.is-preload *:after {
@@ -2172,6 +2172,35 @@ input[type="radio"] + label:before {
     width: 100%;
 }
 
+
+.thumb-left {
+    float: left;
+    margin-right: 20px;
+}
+
+.thumb-right {
+    float: right;
+    margin-left: 20px;
+}
+
+.slide-in {
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.thumb-left.slide-in {
+    transform: translateX(-30%) scale(0.95);
+}
+
+.thumb-right.slide-in {
+    transform: translateX(30%) scale(0.95);
+}
+
+.slide-in.active {
+    opacity: 1;
+    transform: translateX(0%) scale(1);
+}
+
 /* List */
 
 ol {
@@ -2405,9 +2434,6 @@ ul.actions.fit.stacked {
     border-right: 0;
 }
 
-.original-table tbody tr:nth-child(2n + 1) {
-    background-color: #f7f7f7;
-}
 
 .original-tablet d {
     padding: 0.75em 0.75em;
@@ -2618,13 +2644,13 @@ input[type="button"]:disabled,
     -ms-justify-content: space-between;
     justify-content: space-between;
     background-color: #1f1815;
-    background-attachment: fixed;
-    background-image: url("../images/couple-on-left_w_1400.webp");
-    background-position: top left, top left;
+    background-attachment: scroll;
+    background-image: url("../images/couple-on-left.webp");
+    background-position: center;
     background-repeat: repeat, no-repeat;
     background-size: cover;
     color: rgba(255, 255, 255, 0.5);
-    height: 100%;
+    height: 120%;
     left: 0;
     padding: 8em 4em;
     position: fixed;
@@ -2780,7 +2806,6 @@ input[type="button"]:disabled,
     max-width: 60em;
     padding: 8em 4em 4em 4em;
     width: calc(100% - 35%);
-    background-image: url("../images/white-background-vines.jpg"), url("../images/white-background-vines.jpg");
     background-repeat: repeat, repeat;
 
 }
@@ -3065,7 +3090,7 @@ body.is-touch .image.thumb:after {
 }
 
 body.is-touch #header {
-    background-attachment: scroll;
+    background-attachment: fixed;
     background-size: cover;
 }
 
@@ -3152,7 +3177,7 @@ body.is-touch .poptrox-popup .closer {
         text-align: center;
         top: auto;
         width: 100%;
-        display: block;
+        display: flex;
     }
 
     #header h1 {

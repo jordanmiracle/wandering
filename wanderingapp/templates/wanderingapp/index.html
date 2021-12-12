@@ -20,8 +20,26 @@
     <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Satisfy&display=swap" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Crimson+Text" />
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Crimson+Text"/>
     <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            var calendarEL = document.getElementById('calendar');
+
+            var calendar = new FullCalendar.Calendar(calendarEL, {
+                height: "auto",
+                width: "100%",
+                handleWindowResize: true,
+                themeSystem: 'standard',
+                googleCalendarApiKey: 'AIzaSyCNtXiz0hFqZTRlvdAeAQvf5-40hJRphBM',
+                eventSources: [
+                    {
+                        googleCalendarId: '6ulbb1tb1o050qsak7lf9sp77k@group.calendar.google.com',
+                    }
+                ],
+                initialView: 'dayGridMonth'
+            });
+            calendar.render();
+        });
     </script>
     <style>
 
@@ -107,6 +125,38 @@
 
             }
         }
+
+        #header {
+            display: -moz-flex;
+            display: -webkit-flex;
+            display: -ms-flex;
+            display: flex;
+            -moz-flex-direction: column;
+            -webkit-flex-direction: column;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            -moz-align-items: -moz-flex-end;
+            -webkit-align-items: -webkit-flex-end;
+            -ms-align-items: -ms-flex-end;
+            align-items: flex-end;
+            -moz-justify-content: space-between;
+            -webkit-justify-content: space-between;
+            -ms-justify-content: space-between;
+            justify-content: space-between;
+            background-color: #1f1815;
+            background-attachment: scroll;
+            background-position: bottom left, bottom left;
+            background-repeat: repeat, no-repeat;
+            background-size: cover;
+            color: rgba(255, 255, 255, 0.5);
+            height: 120%;
+            left: 0;
+            padding: 8em 4em;
+            position: fixed;
+            text-align: right;
+            top: 0;
+            width: 35%;
+        }
     </style>
 </head>
 <body class="is-preload">
@@ -155,7 +205,8 @@
         <div class="row">
 
             <article class="col-6 col-12-xsmall work-item">
-                <a href="{% static 'wanderingapp/images/pavilion-at-night.webp' %}" class="image fit thumb"><img
+                <a href="{% static 'wanderingapp/images/pavilion-at-night.webp' %}" class="image fit thumb"
+                   id="thumb-left"><img
                         src="{% static 'wanderingapp/images/pavilion-at-night.webp' %}" alt=""/></a>
                 <h3>Apart from our beautiful and natural surroundings, we provide outdoor covered seating and dining
                     areas.</h3>
@@ -175,7 +226,8 @@
             </article>
 
             <article class="col-6 col-12-xsmall work-item">
-                <a href="{% static 'wanderingapp/images/venue-overview.jpg' %}" class="image fit thumb"><img
+                <a href="{% static 'wanderingapp/images/venue-overview.jpg' %}" class="image fit thumb"
+                   id="thumb-right"><img
                         src="{% static 'wanderingapp/images/venue-overview.jpg' %}" alt=""/></a>
                 <h3>Apart from our beautiful and natural surroundings, we provide outdoor covered seating and dining
                     areas.</h3>
@@ -664,26 +716,6 @@
     trigger.addEventListener("click", toggleModal);
     closeButton.addEventListener("click", toggleModal);
     window.addEventListener("click", windowOnClick);
-</script>
-<script>
-    document.addEventListener('DOMContentLoaded', function () {
-        var calendarEL = document.getElementById('calendar');
-
-        var calendar = new FullCalendar.Calendar(calendarEL, {
-            height: "auto",
-            width: "100%",
-            handleWindowResize: true,
-            themeSystem: 'standard',
-            googleCalendarApiKey: 'AIzaSyCNtXiz0hFqZTRlvdAeAQvf5-40hJRphBM',
-            eventSources: [
-                {
-                    googleCalendarId: '6ulbb1tb1o050qsak7lf9sp77k@group.calendar.google.com',
-                }
-            ],
-            initialView: 'dayGridMonth'
-        });
-        calendar.render();
-    });
 </script>
 </body>
 </html>
