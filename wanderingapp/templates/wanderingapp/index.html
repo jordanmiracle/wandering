@@ -170,6 +170,20 @@
 
         </div>
     </div>
+    <footer id="footer">
+        <div class="inner">
+            <ul class="icons">
+                <li><a href="#" class="icon brands fab fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="#" class="icon brands fab fa-github"><span class="label">Github</span></a></li>
+                <li><a href="#" class="icon brands fab fa-dribbble"><span class="label">Dribbble</span></a></li>
+                <li><a href="#" class="icon solid fab fa-envelope"><span class="label">Email</span></a></li>
+            </ul>
+            <ul class="copyright">
+                <li>&copy; Wandering Waters</li>
+            </ul>
+        </div>
+    </footer>
+
 </header>
 
 <!-- Main -->
@@ -211,7 +225,7 @@
                 <h3>Apart from our beautiful and natural surroundings, we provide outdoor covered seating and dining
                     areas.</h3>
                 <button class="trigger">Details</button>
-                <div class="modal">
+                <div class="modal" id="modalbox">
                     <div class="modal-content">
                         <span class="close-button">&times;</span>
                         <h3>To shelter guests there is a 24’ x 36’ party pavilion and an accessory shelter measuring
@@ -232,7 +246,7 @@
                 <h3>Apart from our beautiful and natural surroundings, we provide outdoor covered seating and dining
                     areas.</h3>
                 <button class="trigger">Details</button>
-                <div class="modal">
+                <div class="modal" id="modalbox">
                     <div class="modal-content">
                         <span class="close-button">&times;</span>
                         <h3>To shelter guests there is a 24’ x 36’ party pavilion and an accessory shelter measuring
@@ -700,8 +714,12 @@
 <script type="text/javascript" src="{% static 'fullcalendar/gcal.js' %}"></script>
 <script>
     const modal = document.querySelector(".modal");
-    const trigger = document.querySelector(".trigger");
-    const closeButton = document.querySelector(".close-button");
+    const trigger = document.querySelectorAll(".trigger").forEach(link => link.addEventListener('click', () => {
+        toggleModal();
+    }));
+    const closeButton = document.querySelectorAll(".close-button").forEach(link => link.addEventListener('click', () => {
+        toggleModal()
+    }));
 
     function toggleModal() {
         modal.classList.toggle("show-modal");
