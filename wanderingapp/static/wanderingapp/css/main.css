@@ -2646,7 +2646,7 @@ input[type="button"]:disabled,
     background-color: #1f1815;
     background-attachment: scroll;
     background-image: url("../images/couple-on-left.webp");
-    background-position: center;
+    background-position: bottom left;
     background-repeat: repeat, no-repeat;
     background-size: cover;
     color: rgba(255, 255, 255, 0.5);
@@ -2657,7 +2657,6 @@ input[type="button"]:disabled,
     text-align: right;
     top: 0;
     width: 35%;
-
 }
 
 @media screen and (max-width: 360px) {
@@ -2705,7 +2704,7 @@ input[type="button"]:disabled,
 #title {
     display: inline-block;
     font-family: Arial, Helvetica, sans-serif;
-    color: black;
+    color: #e7e2e2;
     animation: fadeIn linear 4s;
     -webkit-animation: fadeIn linear 4s;
     -moz-animation: fadeIn linear 4s;

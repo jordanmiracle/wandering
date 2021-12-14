@@ -1793,8 +1793,8 @@ hr {
 		}
 	}
 	#header {
-		background-attachment: scroll;
-		background-position: center;
+		background-attachment: fixed;
+		background-position: bottom left;
 		background-size: 100% auto;
 		left: auto;
 		padding: 6em 4em;
