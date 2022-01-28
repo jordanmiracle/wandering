@@ -1,5 +1,5 @@
-{% load static %}
 {% load sass_tags %}
+{% load static %}
 
 <!DOCTYPE HTML>
 
@@ -7,340 +7,259 @@
 <head>
     <title>Wandering Waters</title>
     <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no"/>
-    <link href="{% sass_src 'wanderingapp/css/main.scss' %}" rel="stylesheet" type="text/css" />
-    <link href='https://cdn.jsdelivr.net/npm/fullcalendar@5.5.1/main.min.css' rel='stylesheet'/>
-    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.5.1/main.min.js'></script>
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css"/>
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/solid.css"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com"/>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="anonymous">
-    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Alex+Brush&family=Satisfy&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Crimson+Text"/>
-    <script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <!--<link rel="stylesheet" href="assets/css/main.css" />-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
-        const sliderImages = document.getElementById('slide-in');
+    <link href="{% sass_src 'wanderingapp/sass/main.scss' %}" rel="stylesheet" type="text/css"/>
 
-        function checkSlide(e) {
-            sliderImages.forEach(sliderImage => {
-                // halfway through the image
-                const slideInAt = (window.scrollY + window.innerHeight) - sliderImage.height / 2;
-                // bottom of the image
-                const imageBottom = sliderImage.offsetTop + sliderImage.height;
-                const isHalfShown = slideInAt > sliderImage.offsetTop;
-                const isNotScrolledPast = window.scrollY < imageBottom;
-                if (isHalfShown && isNotScrolledPast) {
-                    sliderImage.classList.add('active');
-                } else {
-                    sliderImage.classList.remove('active');
-                }
-
-                console.log(slideInAt);
-            });
-        }
-
-        window.addEventListener('scroll', debounce(checkSlide));
-    </script>
-    <style>
-
-        #calendar {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
-
-        .modal {
-            position: fixed;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.5);
-            opacity: 0;
-            visibility: hidden;
-            transform: scale(1.1);
-            transition: visibility 0s linear 0.5s, opacity 0.25s 0s, transform 0.25s;
-            z-index: 10;
-        }
-
-        .modal-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: white;
-            padding: 1rem 1.5rem;
-            width: 24rem;
-            border-radius: 0.5rem;
-        }
-
-        .close-button {
-            float: right;
-            width: 1.5rem;
-            line-height: 1.5rem;
-            text-align: center;
-            cursor: pointer;
-            border-radius: 0.25rem;
-            background-color: lightgray;
-        }
-
-        .close-button:hover {
-            background-color: darkgray;
-        }
-
-        .show-modal {
-            opacity: 1;
-            visibility: visible;
-            transform: scale(1.0);
-            transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
-        }
-
-        .trigger {
-            display: inline-block;
-            padding: 0.35em 1.2em;
-            border: 0.1em solid #FFFFFF;
-            margin: 0 0.3em 0.3em 0;
-            border-radius: 0.5em;
-            box-sizing: border-box;
-            text-decoration: none;
-            font-family: 'Crimson Text', sans-serif;
-            font-weight: 300;
-            color: #ECE5D5;
-            background-color: #30332E;
-            text-align: center;
-            transition: all 0.2s;
-        }
-
-        .trigger:hover {
-            color: #73A5D9;
-            background-color: #fefefe;
-            border-color: #30332E;
-            cursor: pointer;
-            position: center;
-        }
-
-        @media all and (max-width: 30em) {
-            a.trigger {
-                display: block;
-                margin: 0.4em auto;
-
-            }
-        }
-
-    </style>
 </head>
 <body class="is-preload">
 
-
 <!-- Header -->
 <header id="header">
-    <div class="inner">
-        <div id="title">
-            <h1>Wandering Waters</h1>
 
-        </div>
+    <!-- Logo -->
+    <div class="logo">
+        <a href="index.html"><strong>Wandering</strong>Waters</a>
     </div>
-    <footer id="footer">
-        <div class="inner">
-            <ul class="icons">
-                <li><a href="#" class="icon brands fab fa-twitter"><span class="label">Twitter</span></a></li>
-                <li><a href="#" class="icon brands fab fa-github"><span class="label">Github</span></a></li>
-                <li><a href="#" class="icon brands fab fa-dribbble"><span class="label">Dribbble</span></a></li>
-                <li><a href="#" class="icon solid fab fa-envelope"><span class="label">Email</span></a></li>
-            </ul>
-            <ul class="copyright">
-                <li>&copy; Wandering Waters</li>
-            </ul>
-        </div>
-    </footer>
+
+    <!-- Nav -->
+
 
 </header>
 
-<!-- Main -->
-<div id="main">
-    <!-- One -->
-    <section id="one">
-        <header class="major">
-            <h2>Celebration and Ceremony in the North Cascades Foothills</h2>
+<!-- Wrapper -->
+<div id="wrapper">
+
+    <!-- Banner -->
+    <section class="banner">
+        <div class="image" data-position="right">
+            <img
+                    sizes="(max-width: 1680px) 100vw, 1680px"
+                    srcset="
+{% static 'wanderingapp/images/couple-on-left_omtg3z_c_scale,w_360.jpg' %} 360w,
+{% static 'wanderingapp/images/couple-on-left_omtg3z_c_scale,w_544.jpg' %} 544w,
+{% static 'wanderingapp/images/couple-on-left_omtg3z_c_scale,w_690.jpg' %} 690w,
+{% static 'wanderingapp/images/couple-on-left_omtg3z_c_scale,w_810.jpg' %} 810w,
+{% static 'wanderingapp/images/couple-on-left_omtg3z_c_scale,w_1012.jpg' %} 1012w,
+{% static 'wanderingapp/images/couple-on-left_omtg3z_c_scale,w_1126.jpg' %} 1126w,
+{% static 'wanderingapp/images/couple-on-left_omtg3z_c_scale,w_1219.jpg' %} 1219w,
+{% static 'wanderingapp/images/couple-on-left_omtg3z_c_scale,w_1275.jpg' %} 1275w,
+{% static 'wanderingapp/images/couple-on-left_omtg3z_c_scale,w_1363.jpg' %} 1363w,
+{% static 'wanderingapp/images/couple-on-left_omtg3z_c_scale,w_1451.jpg' %} 1451w,
+{% static 'wanderingapp/images/couple-on-left_omtg3z_c_scale,w_1531.jpg' %} 1531w,
+{% static 'wanderingapp/images/couple-on-left_omtg3z_c_scale,w_1613.jpg' %} 1613w,
+{% static 'wanderingapp/images/couple-on-left_omtg3z_c_scale,w_1678.jpg' %} 1678w,
+{% static 'wanderingapp/images/couple-on-left_omtg3z_c_scale,w_1680.jpg' %} 1680w"
+                    src="{% static 'wanderingapp/images/couple-on-left_omtg3z_c_scale,w_1680.jpg' %}"
+                    alt="">
+            <div class="content">
+                <h1>Magna etiam lorem sed<br/>
+                    tempus adipiscing</h1>
+                <ul class="actions special">
+                    <li><a href="#" class="button next">Get Started</a></li>
+                </ul>
+            </div>
+    </section>
+
+    <!-- Section -->
+    <section class="main style1">
+        <header class="small">
+            <h2>Ipsum consequat magna<br/>
+                sed etiam lorem adipiscing</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eu lacus imperdiet, cursus erat vitae,
+                dictum nulla. Mauris et euismod sed nunc. Proin vel rhoncus mauris. Quisque mattis dictum etiam.</p>
         </header>
-        <p>
-            Wandering Waters offers stunning mountain views, seclusion, and in the distance the sound of the North Fork
-            Nooksack flowing towards the Salish Sea. The venue sits at the base of a forested slope of tall cedar and
-            fir trees. Southward the landscape is defined by the broadly spreading shoulders of Slide Mountain, and
-            towards the east rises Church and Bald Mountains. Maple Creek, a tributary to the Nooksack, quietly meanders
-            through the property, and is home to an abundance of wildlife including all five species of Pacific
-            salmon.</p>
-
-        <p>
-            In a spirit of Stewardship, development of Wandering Waters began more than twenty years ago, and was
-            inspired by a vision to create an outdoor space for people to gather and celebrate while preserving and
-            enhancing the habitat for the wildlife whose space we share and whose existence we cherish. The structures
-            are crafted in a rustic style from trees that grew on site, and are thoughtfully arranged to enhance the
-            connections between family, friends, and nature.
-
-        </p>
-        <ul class="actions">
-        </ul>
+        <div class="image filtered" data-position="center">
+            <img src="images/pic10.jpg" alt=""/>
+        </div>
+        <div class="features">
+            <section>
+                <span class="icon solid fa-camera-retro major accent2"></span>
+                <h3>Etiam</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eu lacus imperdiet, cursus erat vitae,
+                    dictum nulla.</p>
+            </section>
+            <section>
+                <span class="icon fa-gem major accent3"></span>
+                <h3>Aptent</h3>
+                <p>Ut ultrices hendrerit dignissim euismod. Fusce a sem interdum, elementum quam vitae, hendrerit lorem
+                    eget.</p>
+            </section>
+            <section>
+                <span class="icon fa-chart-bar major accent4"></span>
+                <h3>Magna</h3>
+                <p>Donec hendrerit, orci nec eleifend auctor, ipsum pharetra leo, eu imperdiet mauris sem id tellus. In
+                    at ex efficitur.</p>
+            </section>
+            <section>
+                <span class="icon solid fa-rss major accent1"></span>
+                <h3>Tempus</h3>
+                <p>Faucibus ligula, ac blandit purus arcu non sed nibh. Nam aliquam in erat a ultricies. Vivamus leo est
+                    lorem finibus.</p>
+            </section>
+            <section>
+                <span class="icon fa-comment-dots major accent2"></span>
+                <h3>Aliquam</h3>
+                <p>Fermentum integer laoreet sollicitudin tortor et consequat. Phasellus eu lectus. Sed libero quam
+                    vehicula eleifend.</p>
+            </section>
+            <section>
+                <span class="icon fa-copy major accent3"></span>
+                <h3>Euismod</h3>
+                <p>Quisque nec mollis turpis. Phasellus sit amet magna ut quam lacinia interdum. Phasellus varius
+                    lobortis dui. </p>
+            </section>
+        </div>
+        <footer>
+            <ul class="actions special">
+                <li><a href="#" class="button next">Magna Imperdiet</a></li>
+            </ul>
+        </footer>
     </section>
 
-    <!-- Two -->
-    <section id="two">
-        <h2>What We Provide</h2>
-        <div class="row">
-
-            <article class="col-6 col-12-xsmall work-item">
-                <a href="{% static 'wanderingapp/images/pavilion-at-night.webp' %}" class="image fit thumb"
-                   id="thumb-left slide-in"><img
-                        src="{% static 'wanderingapp/images/pavilion-at-night.webp' %}" alt="Image of the pavilion at night with the two wooden structures lit up."/></a>
-
-                <h3>Apart from our beautiful and natural surroundings, we provide outdoor covered seating and dining
-                    areas.</h3>
-                <button class="trigger">Details</button>
-                <div class="modal">
-                    <div class="modal-content">
-                        <span class="close-button">&times;</span>
-                        <h3>To shelter guests there is a 24’ x 36’ party pavilion and an accessory shelter measuring
-                            15’ x
-                            20’. There is a covered bar for beverage service, a functional outdoor kitchen, a
-                            secondary food
-                            truck kitchen, a covered stage for music, a covered fire pit, water and power hook up
-                            for food
-                            trucks, and bathrooms with flush toilets.</h3>
-                    </div>
-                </div>
-            </article>
-
-            <article class="col-6 col-12-xsmall work-item">
-                <a href="{% static 'wanderingapp/images/venue-overview.jpg' %}" class="image fit thumb"
-                   id="thumb-right slide-in"><img
-                        src="{% static 'wanderingapp/images/venue-overview.jpg' %}" alt=""/></a>
-                <h3>Apart from our beautiful and natural surroundings, we provide outdoor covered seating and dining
-                    areas.</h3>
-                <button class="trigger">Details</button>
-                <div class="modal">
-                    <div class="modal-content">
-                        <span class="close-button">&times;</span>
-                        <h3>To shelter guests there is a 24’ x 36’ party pavilion and an accessory shelter measuring
-                            15’ x
-                            20’. There is a covered bar for beverage service, a functional outdoor kitchen, a
-                            secondary food
-                            truck kitchen, a covered stage for music, a covered fire pit, water and power hook up
-                            for food
-                            trucks, and bathrooms with flush toilets.</h3>
-                    </div>
-                </div>
-            </article>
-            <article class="col-6 col-12-xsmall work-item">
-                <a href="{% static 'wanderingapp/images/wedding-reworked-30.webp' %}" class="image fit thumb"><img
-                        src="{% static 'wanderingapp/images/wedding-reworked-30.webp' %}" alt=""/></a>
-
-                <h3>Apart from our beautiful and natural surroundings, we provide outdoor covered seating and dining
-                    areas.</h3>
-                <button class="trigger">Details</button>
-                <div class="modal">
-                    <div class="modal-content">
-                        <span class="close-button">&times;</span>
-                        <h3>To shelter guests there is a 24’ x 36’ party pavilion and an accessory shelter measuring
-                            15’ x
-                            20’. There is a covered bar for beverage service, a functional outdoor kitchen, a
-                            secondary food
-                            truck kitchen, a covered stage for music, a covered fire pit, water and power hook up
-                            for food
-                            trucks, and bathrooms with flush toilets.</h3>
-                    </div>
-                </div>
-            </article>
-            <article class="col-6 col-12-xsmall work-item">
-                <a href="{% static 'wanderingapp/images/ceremony-area-from-above.webp' %}" class="image fit thumb"><img
-                        src="{% static 'wanderingapp/images/ceremony-area-from-above.webp' %}" alt=""/></a>
-                <h3>Apart from our beautiful and natural surroundings, we provide outdoor covered seating and dining
-                    areas.</h3>
-                <button class="trigger">Details</button>
-                <div class="modal">
-                    <div class="modal-content">
-                        <span class="close-button">&times;</span>
-                        <h3>To shelter guests there is a 24’ x 36’ party pavilion and an accessory shelter measuring
-                            15’ x
-                            20’. There is a covered bar for beverage service, a functional outdoor kitchen, a
-                            secondary food
-                            truck kitchen, a covered stage for music, a covered fire pit, water and power hook up
-                            for food
-                            trucks, and bathrooms with flush toilets.</h3>
-                    </div>
-                </div>
-            </article>
-            <article class="col-6 col-12-xsmall work-item">
-                <a href="{% static 'wanderingapp/images/mariahjon124.jpg' %}" class="image fit thumb"><img
-                        src="{% static 'wanderingapp/images/mariahjon124.jpg' %}" alt=""/></a>
-                <h3>Apart from our beautiful and natural surroundings, we provide outdoor covered seating and dining
-                    areas.</h3>
-                <button class="trigger">Details</button>
-                <div class="modal">
-                    <div class="modal-content">
-                        <span class="close-button">&times;</span>
-                        <h3>To shelter guests there is a 24’ x 36’ party pavilion and an accessory shelter measuring
-                            15’ x
-                            20’. There is a covered bar for beverage service, a functional outdoor kitchen, a
-                            secondary food
-                            truck kitchen, a covered stage for music, a covered fire pit, water and power hook up
-                            for food
-                            trucks, and bathrooms with flush toilets.</h3>
-                    </div>
-                </div>
-            </article>
-            <article class="col-6 col-12-xsmall work-item">
-                <a href="{% static 'wanderingapp/images/Joe_MarinWedding-220(cropped).webp' %}" class="image fit thumb"><img
-                        src="{% static 'wanderingapp/images/Joe_MarinWedding-220(cropped).webp' %}" alt=""/></a>
-                <h3>Apart from our beautiful and natural surroundings, we provide outdoor covered seating and dining
-                    areas.</h3>
-                <button class="trigger">Details</button>
-                <div class="modal">
-                    <div class="modal-content">
-                        <span class="close-button">&times;</span>
-                        <h3>To shelter guests there is a 24’ x 36’ party pavilion and an accessory shelter measuring
-                            15’ x
-                            20’. There is a covered bar for beverage service, a functional outdoor kitchen, a
-                            secondary food
-                            truck kitchen, a covered stage for music, a covered fire pit, water and power hook up
-                            for food
-                            trucks, and bathrooms with flush toilets.</h3>
-                    </div>
-                </div>
-            </article>
+    <!-- Section -->
+    <section class="main style1">
+        <header class="small">
+            <h2>Lacinia egestas amet
+                tincidunt vitae venenatis</h2>
+            <p>Ac mollis metus. Nulla tristique urna sit amet sapien placerat euismod. Suspendisse eget viverra ex. Nunc
+                vel justo lectus. Suspendisse potenti. Phasellus turpis augue, fringilla ut nisi vel placerat.</p>
+        </header>
+        <div class="inner">
+            <div class="posts">
+                <article>
+                    <a href="#" class="image filtered"><img src="images/pic01.jpg" alt=""/></a>
+                    <p><strong>Magna feugiat etiam</strong> ipsum dolor tempus amet, magna consectetur. Fusce eu lacus
+                        imperdiet.</p>
+                    <ul class="actions special">
+                        <li><a href="#" class="button small next">Details</a></li>
+                    </ul>
+                </article>
+                <article>
+                    <a href="#" class="image filtered"><img src="images/pic02.jpg" alt=""/></a>
+                    <p><strong>Lorem ipsum dolor</strong> tempus lacus imperdiet cursus sed nisl adipiscing sed dolor.
+                    </p>
+                    <ul class="actions special">
+                        <li><a href="#" class="button small next">Details</a></li>
+                    </ul>
+                </article>
+                <article>
+                    <a href="#" class="image filtered"><img src="images/pic03.jpg" alt=""/></a>
+                    <p><strong>Feugiat tempus</strong> adipiscing sed quisque mattis rhoncus proin, vel mauris dictum
+                        nullam.</p>
+                    <ul class="actions special">
+                        <li><a href="#" class="button small next">Details</a></li>
+                    </ul>
+                </article>
+                <article>
+                    <a href="#" class="image filtered"><img src="images/pic04.jpg" alt=""/></a>
+                    <p><strong>Enim interdum</strong> dignissim sed orci felis, cursus vitae ipsum. Pulvinar ipsum ex
+                        fringilla lorem.</p>
+                    <ul class="actions special">
+                        <li><a href="#" class="button small next">Details</a></li>
+                    </ul>
+                </article>
+                <article>
+                    <a href="#" class="image filtered"><img src="images/pic05.jpg" alt=""/></a>
+                    <p><strong>Mollis euismod</strong> maximus amet faucibus integer, tristique et lacus lobortis ligula
+                        viverra lorem.</p>
+                    <ul class="actions special">
+                        <li><a href="#" class="button small next">Details</a></li>
+                    </ul>
+                </article>
+                <article>
+                    <a href="#" class="image filtered"><img src="images/pic06.jpg" alt=""/></a>
+                    <p><strong>Urna mattis</strong> tempor amet varius lectus, phasellus vel sem elit dignissim sagittis
+                        morbi adipiscing.</p>
+                    <ul class="actions special">
+                        <li><a href="#" class="button small next">Details</a></li>
+                    </ul>
+                </article>
+                <article>
+                    <a href="#" class="image filtered"><img src="images/pic07.jpg" alt=""/></a>
+                    <p><strong>Rhoncus aliquam</strong> dictum mauris et euismod sed, nunc proin lorem ipsum vitae erat
+                        imperdiet.</p>
+                    <ul class="actions special">
+                        <li><a href="#" class="button small next">Details</a></li>
+                    </ul>
+                </article>
+                <article>
+                    <a href="#" class="image filtered"><img src="images/pic08.jpg" alt=""/></a>
+                    <p><strong>Fuscue lacus</strong> imperdiet dictum, marus et euismod lorem ipsum dolor sit amet nulam
+                        adipiscing.</p>
+                    <ul class="actions special">
+                        <li><a href="#" class="button small next">Details</a></li>
+                    </ul>
+                </article>
+                <article>
+                    <a href="#" class="image filtered"><img src="images/pic09.jpg" alt=""/></a>
+                    <p><strong>Sed malesuada</strong> elit magna tempus dictum vitae erat, consectetur lorem ipsum nulla
+                        consequat.</p>
+                    <ul class="actions special">
+                        <li><a href="#" class="button small next">Details</a></li>
+                    </ul>
+                </article>
+            </div>
         </div>
-
     </section>
 
-    <!-- Three -->
-    <section id="three">
-        <h2>Get In Touch</h2>
-        <div id="calendar">
+    <!-- Section -->
+    <section class="main style2">
+        <header class="small">
+            <h2>Get in touch</h2>
+            <p>Elit dignissim nullam sagittis faucibus dui. Morbi vel nibh mauris. Sed convallis, odio ac posuere
+                bibendum, odio elit bibendum magna, eu tempor diam nulla nec felis. Cras convallis tellus ac justo.</p>
+        </header>
+        <div class="inner special medium">
+            <form action="#" method="post">
+                <div class="fields">
+                    <div class="field half">
+                        <input name="name" id="name" placeholder="Name" type="text"/>
+                    </div>
+                    <div class="field half">
+                        <input name="email" id="email" placeholder="Email" type="email"/>
+                    </div>
+                    <div class="field">
+                        <textarea name="message" id="message" rows="8" placeholder="Message"></textarea>
+                    </div>
+                </div>
+                <ul class="actions special">
+                    <li><input value="Send Message" class="button next" type="submit"/></li>
+                </ul>
+            </form>
 
         </div>
-
+        <footer>
+            <ul class="icons">
+                <li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
+                <li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
+                <li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
+                <li><a href="#" class="icon solid alt fa-phone"><span class="label">Phone</span></a></li>
+                <li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
+            </ul>
+        </footer>
     </section>
 
 </div>
-<!-- Footer -->
 
+<!-- Footer -->
+<footer id="footer">
+    Copyright &copy; Untitled. All rights reserved.
+</footer>
 
 <!-- Scripts -->
-
-<script src="{% static 'wanderingapp/js/jquery.min.js' %}"></script>
-<script src="{% static 'wanderingapp/js/jquery.poptrox.min.js' %}"></script>
-<script src="{% static 'wanderingapp/js/browser.min.js' %}"></script>
-<script src="{% static 'wanderingapp/js/breakpoints.min.js' %}"></script>
-<script src="{% static 'wanderingapp/js/util.js' %}"></script>
-<script src="{% static 'wanderingapp/js/main.js' %}"></script>
-<script src="{% static 'wanderingapp/js/cal.js' %}"></script>
-<script src="{% static 'wanderingapp/js/modal.js' %}"></script>
-
-<script src="https://www.jsdelivr.com/package/npm/fullcalendar"></script>
-
-<script src="{% static 'fullcalendar/main.js' %}"></script>
-<script type="text/javascript" src="{% static 'fullcalendar/gcal.js' %}"></script>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/jquery.dropotron.min.js"></script>
+<script src="assets/js/browser.min.js"></script>
+<script src="assets/js/breakpoints.min.js"></script>
+<script src="assets/js/util.js"></script>
+<script src="assets/js/main.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
 
 </body>
 </html>

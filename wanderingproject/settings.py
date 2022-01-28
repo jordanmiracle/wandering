@@ -10,8 +10,8 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
-from pathlib import Path
 import os
+from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 from django.conf.urls import static
@@ -33,8 +33,6 @@ ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
 INSTALLED_APPS = [
     'wanderingapp',
-    'rest_framework',
-    'schedule',
     'ckeditor',
     'sass_processor',
     'django.contrib.admin',
@@ -124,9 +122,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
-]
+# STATICFILES_DIRS = [
+#    os.path.join(BASE_DIR, 'static')
+# ]
 
 STATICFILES = [
     BASE_DIR / 'static'
@@ -137,7 +135,7 @@ STATICFILES = [
 MEDIA_ROOT = BASE_DIR / 'static/img'
 MEDIA_URL = '/img/'
 
-STATIC_ROOT = BASE_DIR / 'staticfiles'
+STATIC_ROOT = os.path.join(BASE_DIR, "static")
 
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
@@ -145,11 +143,10 @@ STATICFILES_FINDERS = [
     'sass_processor.finders.CssFinder',
 ]
 
-
 # Django Sass
 SASS_PROCESSOR_ROOT = STATIC_ROOT
 
-#SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR, 'static')
+# SASS_PROCESSOR_ROOT = os.path.join(BASE_DIR, 'static')
 
 # STATIC_ROOT = 'var/static'
 
