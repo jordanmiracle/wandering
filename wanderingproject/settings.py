@@ -135,7 +135,7 @@ STATICFILES = [
 MEDIA_ROOT = BASE_DIR / 'static/img'
 MEDIA_URL = '/img/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static")
+STATIC_ROOT = os.path.join(BASE_DIR, "wanderingapp/static")
 
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
