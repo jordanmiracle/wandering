@@ -2661,10 +2661,6 @@ body.is-preload .banner .image:after {
   opacity: 1;
 }
 body.is-preload .banner .image img {
-  -moz-filter: blur(1.5rem);
-  -webkit-filter: blur(1.5rem);
-  -ms-filter: blur(1.5rem);
-  filter: blur(1.5rem);
   -moz-transform: translateX(-1.5rem) scale(1.125);
   -webkit-transform: translateX(-1.5rem) scale(1.125);
   -ms-transform: translateX(-1.5rem) scale(1.125);
@@ -2675,10 +2671,6 @@ body.is-preload .banner h1, body.is-preload .banner .actions {
   -webkit-transform: scale(0.985);
   -ms-transform: scale(0.985);
   transform: scale(0.985);
-  -moz-filter: blur(0.1rem);
-  -webkit-filter: blur(0.1rem);
-  -ms-filter: blur(0.1rem);
-  filter: blur(0.1rem);
   opacity: 0;
 }
 @media screen and (max-width: 1280px) {
@@ -3114,7 +3106,6 @@ body.is-preload .banner h1, body.is-preload .banner .actions {
   width: 20rem;
   height: 3px;
   margin-left: -10rem;
-  background-image: linear-gradient(90deg, #71aca0, #efc278);
 }
 .main > .image {
   display: block;
@@ -3455,6 +3446,7 @@ body {
   box-shadow: 0 0 0.5rem 0 rgba(161, 177, 204, 0.325);
   cursor: default;
   z-index: 10000;
+  padding-bottom: 2em;
 }
 #header a {
   display: block;

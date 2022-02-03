@@ -13,64 +13,34 @@
           integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
     <link href="{% sass_src 'wanderingapp/sass/main.scss' %}" rel="stylesheet" type="text/css"/>
+    <style>
+        .title {
+            font-family: "EB Gara", "EB", serif;
+            position: center;
+            justify-content: center;
+            font-size: 2rem;
+        }
 
+
+    </style>
 </head>
 <body class="is-preload">
-
-<!-- Header -->
-<header id="header">
-
-    <!-- Logo -->
-    <div class="logo">
-        <a href="index.html"><strong>Wandering</strong>Waters</a>
-    </div>
-
-    <!-- Nav -->
-    <nav id="nav">
-        <ul>
-            <li class="current"><a href="index.html">Home</a></li>
-            <li>
-                <a href="#" class="icon solid fa-angle-down">Dropdown</a>
-                <ul>
-                    <li><a href="#">Option One</a></li>
-                    <li><a href="#">Option Two</a></li>
-                    <li><a href="#">Option Three</a></li>
-                    <li>
-                        <a href="#">Submenu</a>
-                        <ul>
-                            <li><a href="#">Option One</a></li>
-                            <li><a href="#">Option Two</a></li>
-                            <li><a href="#">Option Three</a></li>
-                            <li><a href="#">Option Four</a></li>
-                        </ul>
-                    </li>
-                </ul>
-            </li>
-            <li><a href="generic.html">Generic</a></li>
-            <li><a href="elements.html">Elements</a></li>
-        </ul>
-    </nav>
-
-</header>
 
 <!-- Wrapper -->
 <div id="wrapper">
 
     <!-- Banner -->
-    <section class="banner">
-        <div class="image" data-position="right">
-            <img src="{% static 'wanderingapp/images/couple-on-left.jpg' %}"
-                 alt="">
-            <div class="content">
-                <h1>Magna etiam lorem sed<br/>
-                    tempus adipiscing</h1>
-                <ul class="actions special">
-                    <li><a href="#" class="button next">Get Started</a></li>
-                </ul>
-            </div>
-        </div>
-    </section>
+    <div class="slideshow-container">
+        <section class="banner">
+            <div class="image" data-position="right">
+                <img src="{% static 'wanderingapp/images/couple-on-left.jpg' %}"
+                     alt="">
 
+            </div>
+        </section>
+    </div>
+
+    <span class="title">Wandering Waters</span>
     <!-- Section -->
     <section class="main style1">
         <header class="small">
@@ -79,6 +49,7 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eu lacus imperdiet, cursus erat vitae,
                 dictum nulla. Mauris et euismod sed nunc. Proin vel rhoncus mauris. Quisque mattis dictum etiam.</p>
         </header>
+
         <div class="image filtered" data-position="center">
             <img src="{% static 'wanderingapp/images/pic10.jpg' %}" alt=""/>
         </div>
@@ -92,88 +63,16 @@
 
     <!-- Section -->
     <section class="main style1">
+
+
         <header class="small">
             <h2>Lacinia egestas amet
                 tincidunt vitae venenatis</h2>
             <p>Ac mollis metus. Nulla tristique urna sit amet sapien placerat euismod. Suspendisse eget viverra ex. Nunc
                 vel justo lectus. Suspendisse potenti. Phasellus turpis augue, fringilla ut nisi vel placerat.</p>
         </header>
-        <div class="inner">
-            <div class="posts">
-                <article>
-                    <a href="#" class="image filtered"><img src="{% static 'wanderingapp/images/pic01.jpg' %}" alt=""/></a>
-                    <p><strong>Magna feugiat etiam</strong> ipsum dolor tempus amet, magna consectetur. Fusce eu lacus
-                        imperdiet.</p>
-                    <ul class="actions special">
-                        <li><a href="#" class="button small next">Details</a></li>
-                    </ul>
-                </article>
-                <article>
-                    <a href="#" class="image filtered"><img src="{% static 'wanderingapp/images/pic02.jpg' %}" alt=""/></a>
-                    <p><strong>Lorem ipsum dolor</strong> tempus lacus imperdiet cursus sed nisl adipiscing sed dolor.
-                    </p>
-                    <ul class="actions special">
-                        <li><a href="#" class="button small next">Details</a></li>
-                    </ul>
-                </article>
-                <article>
-                    <a href="#" class="image filtered"><img src="{% static 'wanderingapp/images/pic03.jpg' %}" alt=""/></a>
-                    <p><strong>Feugiat tempus</strong> adipiscing sed quisque mattis rhoncus proin, vel mauris dictum
-                        nullam.</p>
-                    <ul class="actions special">
-                        <li><a href="#" class="button small next">Details</a></li>
-                    </ul>
-                </article>
-                <article>
-                    <a href="#" class="image filtered"><img src="{% static 'wanderingapp/images/pic04.jpg' %}" alt=""/></a>
-                    <p><strong>Enim interdum</strong> dignissim sed orci felis, cursus vitae ipsum. Pulvinar ipsum ex
-                        fringilla lorem.</p>
-                    <ul class="actions special">
-                        <li><a href="#" class="button small next">Details</a></li>
-                    </ul>
-                </article>
-                <article>
-                    <a href="#" class="image filtered"><img src="{% static 'wanderingapp/images/pic05.jpg' %}" alt=""/></a>
-                    <p><strong>Mollis euismod</strong> maximus amet faucibus integer, tristique et lacus lobortis ligula
-                        viverra lorem.</p>
-                    <ul class="actions special">
-                        <li><a href="#" class="button small next">Details</a></li>
-                    </ul>
-                </article>
-                <article>
-                    <a href="#" class="image filtered"><img src="{% static 'wanderingapp/images/pic06.jpg' %}" alt=""/></a>
-                    <p><strong>Urna mattis</strong> tempor amet varius lectus, phasellus vel sem elit dignissim sagittis
-                        morbi adipiscing.</p>
-                    <ul class="actions special">
-                        <li><a href="#" class="button small next">Details</a></li>
-                    </ul>
-                </article>
-                <article>
-                    <a href="#" class="image filtered"><img src="{% static 'wanderingapp/images/pic07.jpg' %}" alt=""/></a>
-                    <p><strong>Rhoncus aliquam</strong> dictum mauris et euismod sed, nunc proin lorem ipsum vitae erat
-                        imperdiet.</p>
-                    <ul class="actions special">
-                        <li><a href="#" class="button small next">Details</a></li>
-                    </ul>
-                </article>
-                <article>
-                    <a href="#" class="image filtered"><img src="{% static 'wanderingapp/images/pic08.jpg' %}" alt=""/></a>
-                    <p><strong>Fuscue lacus</strong> imperdiet dictum, marus et euismod lorem ipsum dolor sit amet nulam
-                        adipiscing.</p>
-                    <ul class="actions special">
-                        <li><a href="#" class="button small next">Details</a></li>
-                    </ul>
-                </article>
-                <article>
-                    <a href="#" class="image filtered"><img src="{% static 'wanderingapp/images/pic09.jpg' %}" alt=""/></a>
-                    <p><strong>Sed malesuada</strong> elit magna tempus dictum vitae erat, consectetur lorem ipsum nulla
-                        consequat.</p>
-                    <ul class="actions special">
-                        <li><a href="#" class="button small next">Details</a></li>
-                    </ul>
-                </article>
-            </div>
-        </div>
+
+
     </section>
 
     <!-- Section -->

@@ -1,10 +1,10 @@
 from django.db import models
-from ckeditor.fields import RichTextField, RichTextFormField
-from ckeditor.widgets import CKEditorWidget
 
 
-class Event(models.Model):
-    title = models.CharField(max_length=200)
-    description = RichTextField()
-    start_time = models.DateTimeField()
-    end_time = models.DateTimeField()
+class SlideShow(models.Model):
+    image = models.ImageField(null=False, blank=False, upload_to='')
+    title = models.TextField(blank=True, null=True)
+    description = models.TextField(null=False, blank=False)
+
+    def __str__(self):
+        return self.description

@@ -1,6 +1,5 @@
 from django.contrib import admin
-from wanderingapp.models import Event
 
+from .models import SlideShow
 
-admin.site.register(Event)
-
+admin.site.register(SlideShow)

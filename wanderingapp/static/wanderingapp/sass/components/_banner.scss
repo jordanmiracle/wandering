@@ -78,14 +78,12 @@
       }
 
       img {
-        @include vendor('filter', 'blur(1.5rem)');
         @include vendor('transform', 'translateX(-1.5rem) scale(1.125)');
       }
     }
 
     h1, .actions {
       @include vendor('transform', 'scale(0.985)');
-      @include vendor('filter', 'blur(0.1rem)');
       opacity: 0;
     }
   }
