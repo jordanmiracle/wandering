@@ -30,15 +30,15 @@
 <div id="wrapper">
 
     <!-- Banner -->
-    <div class="slideshow-container">
-        <section class="banner">
+    <section class="banner">
+        {% for photo in photos %}
             <div class="image" data-position="right">
-                <img src="{% static 'wanderingapp/images/couple-on-left.jpg' %}"
-                     alt="">
+            <img src="{{ photo.image.url }}"
+                 alt="">
+        {% endfor %}
 
-            </div>
-        </section>
-    </div>
+        </div>
+    </section>
 
     <span class="title">Wandering Waters</span>
     <!-- Section -->

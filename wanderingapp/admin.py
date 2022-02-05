@@ -1,5 +1,5 @@
 from django.contrib import admin
 
-from .models import SlideShow
+from .models import Slideshow
 
-admin.site.register(SlideShow)
+admin.site.register(Slideshow)
