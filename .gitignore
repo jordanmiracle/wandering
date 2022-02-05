@@ -13,6 +13,7 @@ website/migrations/__pycache__/
 __pycache__
 db.sqlite3
 media
+devsettings.py
 
 # Backup files #
 *.bak
