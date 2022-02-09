@@ -132,10 +132,10 @@ STATICFILES = [
 
 # STATICFILES_FINDERS = 'djangobower.finders.BowerFinder'
 
-MEDIA_ROOT = BASE_DIR / 'static/img'
-MEDIA_URL = '/img/'
+MEDIA_ROOT = BASE_DIR / 'static/images'
+MEDIA_URL = '/media/'
 
-STATIC_ROOT = os.path.join(BASE_DIR, "wanderingapp/static")
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
