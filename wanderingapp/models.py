@@ -1,10 +1,18 @@
 from django.db import models
 
 
-class Slideshow(models.Model):
-    image = models.ImageField(null=False, blank=False, upload_to='')
-    title = models.TextField(blank=True, null=True, max_length=150)
-    description = models.TextField(null=False, blank=False, max_length=500)
+class Post(models.Model):
+    title = models.CharField(max_length=250)
+    description = models.TextField()
+    image = models.FileField(blank=True)
 
     def __str__(self):
         return self.title
+
+
+class PostImage(models.Model):
+    post = models.ForeignKey(Post, default=None, on_delete=models.CASCADE)
+    images = models.FileField(upload_to='')
+
+    def __str__(self):
+        return self.post.title

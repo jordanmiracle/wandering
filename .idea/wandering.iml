@@ -26,6 +26,7 @@
     <orderEntry type="library" name="@fullcalendar/timegrid" level="application" />
     <orderEntry type="library" name="@fullcalendar/vue" level="application" />
     <orderEntry type="library" name="@fullcalendar/interaction" level="application" />
+    <orderEntry type="library" name="bootstrap" level="application" />
   </component>
   <component name="PyDocumentationSettings">
     <option name="format" value="PLAIN" />

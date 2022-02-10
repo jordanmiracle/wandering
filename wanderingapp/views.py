@@ -1,16 +1,17 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 
-from .models import Slideshow
+from .models import Post, PostImage
+
+
+def blog_view(request):
+    posts = Post.objects.all()
+    return render(request, 'index.html', {'posts': posts})
 
 
 def index(request):
-    photos = Slideshow.objects.all()
-    context = {
+    post = get_object_or_404(Post)
+    photos = PostImage.objects.filter()
+    return render(request, 'wanderingapp/index.html', {
+        'post': post,
         'photos': photos
-    }
-    return render(request, 'wanderingapp/index.html', context)
-
-# def addPhoto(request):
-#    if request.method == 'POST':
-#        data = request.POST
-#        images = request.FILES.getlist('images')
+    })

@@ -2,7 +2,7 @@
 /* Header */
 
 body {
-  padding-top: 4.5rem;
+  padding-top: 0;
 
   @include breakpoint('<=small') {
     padding-top: 44px;
