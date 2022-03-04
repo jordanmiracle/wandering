@@ -29,9 +29,26 @@
         }
 
         #wrapper .title {
-            margin: 1.5em 0 0 0;
+            margin: .5em 0 0 0;
         }
 
+        .map-responsive {
+            overflow: hidden;
+            padding-bottom: 46.25%;
+            padding-left: 0;
+            padding-right: 0;
+            position: relative;
+            height: 0;
+        }
+
+        .map-responsive iframe {
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            position: absolute;
+
+        }
 
     </style>
 </head>
@@ -77,11 +94,6 @@
             <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce eu lacus imperdiet, cursus erat vitae,
                 dictum nulla. Mauris et euismod sed nunc. Proin vel rhoncus mauris. Quisque mattis dictum etiam.</p>
         </header>
-
-        <div class="image filtered" data-position="center">
-            <img src="{% static 'wanderingapp/images/pic10.jpg' %}" alt=""/>
-        </div>
-
         <footer>
             <ul class="actions special">
                 <li><a href="#" class="button next">Magna Imperdiet</a></li>
@@ -107,9 +119,8 @@
     <section class="main style2">
         <header class="small">
             <h2>Get in touch</h2>
-            <p>Elit dignissim nullam sagittis faucibus dui. Morbi vel nibh mauris. Sed convallis, odio ac posuere
-                bibendum, odio elit bibendum magna, eu tempor diam nulla nec felis. Cras convallis tellus ac justo.</p>
         </header>
+
         <div class="inner special medium">
             <form action="#" method="post">
                 <div class="fields">
@@ -128,6 +139,10 @@
                 </ul>
             </form>
 
+        </div>
+        <div class="map-responsive">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4722.863493027155!2d-122.08493492851697!3d48.91755148048891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54845265e5a4e693%3A0x9ac5f56599936183!2sWandering%20Waters%20Farm!5e0!3m2!1sen!2sus!4v1644492323088!5m2!1sen!2sus"
+                    width="900" height="600" style="border:1em;" allowfullscreen="" loading="lazy"></iframe>
         </div>
         <footer>
             <ul class="icons">

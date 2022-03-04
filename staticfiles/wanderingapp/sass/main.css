@@ -74,7 +74,7 @@ html {
 
 body {
   background-color: #fff8dc;
-  background-image: url("../../images/overlay.png"), url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='100' viewBox='0 0 200 100' preserveAspectRatio='none'%3E%3Cdefs%3E%3CradialGradient id='rg1' cx='0%25' cy='0%25' r='100%25' fx='0%25' fy='0%25'%3E%3Cstop offset='0%25' style='stop-color: %2371aca0%3B stop-opacity: 0.5' /%3E%3Cstop offset='100%25' style='stop-color: %2371aca0%3B stop-opacity:0' /%3E%3C/radialGradient%3E%3CradialGradient id='rg2' cx='100%25' cy='0%25' r='100%25' fx='100%25' fy='0%25'%3E%3Cstop offset='0%25' style='stop-color: %23efc278%3B stop-opacity: 0.5' /%3E%3Cstop offset='100%25' style='stop-color: %23efc278%3B stop-opacity:0' /%3E%3C/radialGradient%3E%3C/defs%3E%3Cpolygon points='0,0 125,0 125,100 0,100' style='fill: url(%23rg1)%3B' /%3E%3Cpolygon points='75,0 200,0 200,100 75,100' style='fill: url(%23rg2)%3B' /%3E%3C/svg%3E"), url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='100' viewBox='0 0 200 100' preserveAspectRatio='none'%3E%3Cdefs%3E%3CradialGradient id='rg1' cx='0%25' cy='100%25' r='100%25' fx='0%25' fy='100%25'%3E%3Cstop offset='0%25' style='stop-color: %2371aca0%3B stop-opacity: 0.5' /%3E%3Cstop offset='100%25' style='stop-color: %2371aca0%3B stop-opacity:0' /%3E%3C/radialGradient%3E%3CradialGradient id='rg2' cx='100%25' cy='100%25' r='100%25' fx='100%25' fy='100%25'%3E%3Cstop offset='0%25' style='stop-color: %23efc278%3B stop-opacity: 0.5' /%3E%3Cstop offset='100%25' style='stop-color: %23efc278%3B stop-opacity:0' /%3E%3C/radialGradient%3E%3C/defs%3E%3Cpolygon points='0,0 125,0 125,100 0,100' style='fill: url(%23rg1)%3B' /%3E%3Cpolygon points='75,0 200,0 200,100 75,100' style='fill: url(%23rg2)%3B' /%3E%3C/svg%3E");
+  background-image: url("../../images/overlay.png"), url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='100' viewBox='0 0 200 100' preserveAspectRatio='none'%3E%3Cdefs%3E%3CradialGradient id='rg1' cx='0%25' cy='0%25' r='100%25' fx='0%25' fy='0%25'%3E%3Cstop offset='0%25' style='stop-color: %2330642aeb%3B stop-opacity: 0.5' /%3E%3Cstop offset='100%25' style='stop-color: %2330642aeb%3B stop-opacity:0' /%3E%3C/radialGradient%3E%3CradialGradient id='rg2' cx='100%25' cy='0%25' r='100%25' fx='100%25' fy='0%25'%3E%3Cstop offset='0%25' style='stop-color: %2330642aeb%3B stop-opacity: 0.5' /%3E%3Cstop offset='100%25' style='stop-color: %2330642aeb%3B stop-opacity:0' /%3E%3C/radialGradient%3E%3C/defs%3E%3Cpolygon points='0,0 125,0 125,100 0,100' style='fill: url(%23rg1)%3B' /%3E%3Cpolygon points='75,0 200,0 200,100 75,100' style='fill: url(%23rg2)%3B' /%3E%3C/svg%3E"), url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='100' viewBox='0 0 200 100' preserveAspectRatio='none'%3E%3Cdefs%3E%3CradialGradient id='rg1' cx='0%25' cy='100%25' r='100%25' fx='0%25' fy='100%25'%3E%3Cstop offset='0%25' style='stop-color: %2330642aeb%3B stop-opacity: 0.5' /%3E%3Cstop offset='100%25' style='stop-color: %2330642aeb%3B stop-opacity:0' /%3E%3C/radialGradient%3E%3CradialGradient id='rg2' cx='100%25' cy='100%25' r='100%25' fx='100%25' fy='100%25'%3E%3Cstop offset='0%25' style='stop-color: %2330642aeb%3B stop-opacity: 0.5' /%3E%3Cstop offset='100%25' style='stop-color: %2330642aeb%3B stop-opacity:0' /%3E%3C/radialGradient%3E%3C/defs%3E%3Cpolygon points='0,0 125,0 125,100 0,100' style='fill: url(%23rg1)%3B' /%3E%3Cpolygon points='75,0 200,0 200,100 75,100' style='fill: url(%23rg2)%3B' /%3E%3C/svg%3E");
   background-size: auto, 100% 60rem, 100% 60rem;
   background-position: top left, top left, bottom left;
   background-repeat: repeat, no-repeat, no-repeat; }
@@ -1517,7 +1517,7 @@ span.icon:before {
   cursor: default; }
 
 .icon.accent1 {
-  color: #71aca0; }
+  color: #30642aeb; }
 
 .icon.accent2 {
   color: #a7b58f; }
@@ -1526,10 +1526,10 @@ span.icon:before {
   color: #6e9e64; }
 
 .icon.accent4 {
-  color: #efc278; }
+  color: #30642aeb; }
 
 .icon.accent5 {
-  color: #4baf7f; }
+  color: #5E7A00; }
 
 .icon.alt:before {
   box-shadow: inset 0 0 0 1px #dde1eb; }
@@ -1667,7 +1667,7 @@ a.icon.alt:active {
       left: 0;
       width: 100%;
       height: 100%;
-      background-image: url("../../images/couple-on-left.jpg"), linear-gradient(45deg, rgba(113, 172, 160, 0.25), rgba(239, 194, 120, 0.25)); }
+      background-image: url("../../images/couple-on-left.jpg"), linear-gradient(45deg, rgba(48, 100, 42, 0.171569), rgba(48, 100, 42, 0.171569)); }
 
 a.image {
   overflow: hidden; }
@@ -2385,7 +2385,7 @@ table.alt tbody tr td {
     text-align: center; }
   .main.style2 {
     color: #ffffff;
-    background-image: url("../../images/overlay.png"), linear-gradient(45deg, #5eae90, #9db97c); }
+    background-image: url("../../images/overlay.png"), linear-gradient(45deg, rgba(73, 112, 19, 0.960784), rgba(73, 112, 19, 0.960784)); }
     .main.style2 input, .main.style2 select, .main.style2 textarea {
       color: #ffffff; }
     .main.style2 a {
@@ -2668,7 +2668,7 @@ body {
           left: 0;
           width: 100%;
           height: 3px;
-          background-image: linear-gradient(90deg, #71aca0, #efc278); }
+          background-image: linear-gradient(90deg, #30642aeb, #30642aeb); }
         #header > nav > ul > li.current > a {
           color: #6e9e64; }
         #header > nav > ul > li.active > a {
