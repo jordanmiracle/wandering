@@ -21,15 +21,16 @@
             font-family: "Dancing Script", cursive;
             position: center;
             justify-content: center;
-            font-size: 3rem;
+            font-size: 4.8rem;
             display: flex;
             box-shadow: none !important;
-            padding-top: .25em;
+            padding-top: 0;
             margin: 0;
+            color: darkslategray;
         }
 
         #wrapper .title {
-            margin: .5em 0 0 0;
+            margin: 0;
         }
 
         .map-responsive {
@@ -73,8 +74,8 @@
                 <div class="carousel-inner" role="listbox">
                     {% for photo in photos %}
                         <div class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}">
-                            <img class="d-block w-100" src="{{ photo.images.url }}""
-                            alt="First slide">
+                            <img class="d-block w-100" src="{{ photo.images.url }}"
+                                 alt="First slide">
                         </div>
                     {% endfor %}
 
