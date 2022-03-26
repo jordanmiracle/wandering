@@ -35,6 +35,8 @@ INSTALLED_APPS = [
     'wanderingapp',
     'ckeditor',
     'sass_processor',
+    'user',
+    'crispy_forms'
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

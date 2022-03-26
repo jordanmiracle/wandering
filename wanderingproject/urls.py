@@ -21,12 +21,12 @@ from django.urls import path, include
 from wanderingapp import views
 
 app_name = 'wanderingapp'
-
+template_name = ""
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
     path('index/<int:id>/', views.index, name='index'),
-    path('', include("user.urls"))
+    path('user/', include("user.urls"))
 
 ]
 urlpatterns = urlpatterns + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

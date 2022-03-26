@@ -1,17 +1,11 @@
 # Create your views here.
 from django.contrib import messages
 from django.contrib.auth import login, authenticate, logout
-from django.contrib.auth.decorators import login_required
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 
 from wanderingapp.models import PostImage
 from .forms import RegisterForm, LoginForm
-
-
-@login_required(login_url="user:login")
-def dashboard(request):
-    return render(request, "dashboard.html")
 
 
 def register(request):
@@ -63,7 +57,6 @@ def logoutUser(request):
     return redirect("index")
 
 
-@login_required(login_url='login')
 def addPhoto(request):
     if request.method == 'POST':
         data = request.POST
@@ -77,4 +70,4 @@ def addPhoto(request):
 
         return redirect('gallery')
 
-    return render(request, 'add.html')
+    return render(request, 'add.html', {})
