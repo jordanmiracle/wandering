@@ -1,18 +1,15 @@
-{% extends "layout.html" %}
+{% extends "registration/layout.html" %}
 {% load crispy_forms_filters %}
-
 {% block body %}
-
     {% load crispy_forms_tags %}
 
     <div class="row">
         <div class="col-md-6 offset-md-3">
-            <h3>Register</h3>
+            <h3>Login</h3>
             <hr>
             <form method="post">
                 {% csrf_token %}
-
-                {{ register_form|crispy }}
+                {{ form|crispy }}
                 <br>
                 <button type="submit" class="btn btn-danger">Login</button>
             </form>
@@ -20,4 +17,3 @@
     </div>
 
 {% endblock body %}
-
