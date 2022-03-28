@@ -20,11 +20,12 @@ from django.urls import path, include
 
 from wanderingapp import views
 
-app_name = 'wanderingapp'
+# app_name = 'wanderingapp'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('', views.index, name='index'),
+    path('', include('wanderingapp.urls')),
     path('index/<int:id>/', views.index, name='index'),
     path('members/', include('members.urls')),
     path('members/', include('django.contrib.auth.urls')),
