@@ -24,7 +24,6 @@ def addPhoto(request):
             image=image,
         )
 
-    return redirect('gallery')
+        return redirect('gallery')
 
-
-return render(request, 'wanderingapp/add_photo.html', context)
+    return render(request, 'wanderingapp/add_photo.html', {})
