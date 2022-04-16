@@ -1,17 +1,17 @@
 from django.shortcuts import get_object_or_404
 from django.shortcuts import render, redirect
 
-from .models import Post, PostImage
+from .models import Slider, SliderImage
 
 
 def blog_view(request):
-    posts = Post.objects.all()
+    posts = Slider.objects.all()
     return render(request, 'wanderingapp/index.html', {'posts': posts})
 
 
 def index(request):
-    post = get_object_or_404(Post)
-    photos = PostImage.objects.filter()
+    post = get_object_or_404(Slider)
+    photos = SliderImage.objects.filter()
     return render(request, 'wanderingapp/index.html', {
         'post': post,
         'photos': photos
@@ -19,8 +19,8 @@ def index(request):
 
 
 def addPhoto(request):
-    for image in PostImage:
-        photo = PostImage.objects.create(
+    for image in SliderImage:
+        photo = SliderImage.objects.create(
             image=image,
         )
 

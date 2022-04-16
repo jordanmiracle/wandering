@@ -29,14 +29,11 @@ html {
 }
 
 body {
-  background-color: #ffffff;
-  background-image: url('../../images/overlay.png');
-  background-position: top left,
+  background: repeating-linear-gradient(40deg, #FFFFFA, #FFFFF6, #ffffff) repeat,
+  no-repeat,
+  no-repeat top left,
   top left,
   bottom left;
-  background-repeat: repeat,
-  no-repeat,
-  no-repeat;
 
   // Stops initial animations until page loads.
   &.is-preload {

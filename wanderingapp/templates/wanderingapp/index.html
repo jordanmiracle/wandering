@@ -10,14 +10,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap" rel="stylesheet">
-    <!-- The below -->
-    <script src="{% static 'wanderingapp/js/jquery.min.js' %}"></script>
-    <script src="{% static 'wanderingapp/js/jquery.dropotron.min.js' %}"></script>
-    <script src="{% static 'wanderingapp/js/browser.min.js' %}"></script>
-    <script src="{% static 'wanderingapp/js/breakpoints.min.js' %}"></script>
-    <script src="{% static 'wanderingapp/js/util.js' %}"></script>
-    <script src="{% static 'wanderingapp/js/main.js' %}"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Josefin+Sans:ital,wght@0,200;0,400;1,300&display=swap"
+          rel="stylesheet">
+
 
     <!--<link rel="stylesheet" href="assets/css/main.css" />-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
@@ -30,6 +27,7 @@
             position: center;
             justify-content: center;
             font-size: 4.8rem;
+            font-weight: 100;
             display: flex;
             box-shadow: none !important;
             padding-top: 0;
@@ -105,7 +103,7 @@
         </header>
         <footer>
             <ul class="actions special">
-                <li><a href="#" class="button next">Magna Imperdiet</a></li>
+                <li><a href="#" class="button next">See our video tour</a></li>
             </ul>
         </footer>
     </section>
@@ -131,27 +129,30 @@
         </header>
 
         <div class="inner special medium">
-            <form action="#" method="post">
-                <div class="fields">
-                    <div class="field half">
-                        <input name="name" id="name" placeholder="Name" type="text"/>
-                    </div>
-                    <div class="field half">
-                        <input name="email" id="email" placeholder="Email" type="email"/>
-                    </div>
-                    <div class="field">
-                        <textarea name="message" id="message" rows="8" placeholder="Message"></textarea>
-                    </div>
+            <form action="mailto:jordanmiracle@protonmail.com" method="post" enctype="multipart/form-data"
+                  name="EmailForm" Name:
+            <br>
+            <div class="fields">
+                <div class="field half">
+                    <input name="name" id="name" placeholder="Name" type="text"/>
                 </div>
-                <ul class="actions special">
-                    <li><input value="Send Message" class="button next" type="submit"/></li>
-                </ul>
+                <div class="field half">
+                    <input name="email" id="email" placeholder="Email" type="email"/>
+                </div>
+                <div class="field">
+                    <textarea name="message" id="message" rows="8" placeholder="Message"></textarea>
+                </div>
+            </div>
+            <ul class="actions special">
+                <li><input value="Send Message" class="button next" type="submit"/></li>
+            </ul>
             </form>
 
         </div>
         <div class="map-responsive">
             <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d4722.863493027155!2d-122.08493492851697!3d48.91755148048891!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x54845265e5a4e693%3A0x9ac5f56599936183!2sWandering%20Waters%20Farm!5e0!3m2!1sen!2sus!4v1644492323088!5m2!1sen!2sus"
-                    width="900" height="600" style="border:1em;" allowfullscreen="" loading="lazy"></iframe>
+                    width="900" height="600" style="border:3em solid #3B5622;" allowfullscreen=""
+                    loading="lazy"></iframe>
         </div>
         <footer>
             <ul class="icons">
@@ -183,6 +184,13 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+<!-- The below -->
+<script src="{% static 'wanderingapp/js/jquery.min.js' %}"></script>
+<script src="{% static 'wanderingapp/js/jquery.dropotron.min.js' %}"></script>
+<script src="{% static 'wanderingapp/js/browser.min.js' %}"></script>
+<script src="{% static 'wanderingapp/js/breakpoints.min.js' %}"></script>
+<script src="{% static 'wanderingapp/js/util.js' %}"></script>
+<script src="{% static 'wanderingapp/js/main.js' %}"></script>
 
 </body>
 </html>

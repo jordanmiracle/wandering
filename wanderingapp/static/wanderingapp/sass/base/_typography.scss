@@ -22,7 +22,7 @@ body {
 }
 
 body, input, select, textarea {
-  font-family: _font(family);
+  font-family: _font(family), serif;
   font-weight: _font(weight);
   font-size: 1rem;
   line-height: 1.65;

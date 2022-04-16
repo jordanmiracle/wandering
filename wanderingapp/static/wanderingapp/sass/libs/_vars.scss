@@ -19,7 +19,7 @@ $size: (
 
 // Font.
 $font: (
-        family: ('Source Sans Pro', Helvetica, sans-serif),
+        family: ('Josefin Sans', Helvetica, sans-serif),
         family-fixed: ('Courier New', monospace),
         weight: 300,
         weight-bold: 600,
@@ -37,12 +37,12 @@ $palette: (
         border: #dde1eb,
         border-bg: rgba(#dde1eb, 0.175),
         border-bg-alt: rgba(#dde1eb, 0.275),
-        accent1: #30642aeb,
+        accent1: #3B5622,
         accent2: #a7b58f,
         accent3: #6e9e64,
         accent4: #30642aeb,
-        accent5: #5E7A00,
-        highlight: #6e9e64,
+        accent5: #3B5622,
+        highlight: rgba(95, 141, 86, 0.78),
         invert: (
                 bg: darken(desaturate(mix(mix(#71aca0, #efc278, 50%), #4baf7f, 50%), 15), 8),
                 bg-alt: #917aa9,

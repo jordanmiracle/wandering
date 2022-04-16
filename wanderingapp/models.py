@@ -1,10 +1,11 @@
 from django.db import models
 
 
-class Post(models.Model):
+class Slider(models.Model):
     image = models.FileField(blank=True)
 
 
-class PostImage(models.Model):
-    post = models.ForeignKey(Post, default=None, on_delete=models.CASCADE)
+class SliderImage(models.Model):
+    slider = models.ForeignKey(Slider, default=None, on_delete=models.CASCADE)
+    title = models.CharField(blank=True, null=True, max_length=250, default='')
     images = models.FileField(upload_to='')

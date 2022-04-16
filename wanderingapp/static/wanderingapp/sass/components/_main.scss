@@ -94,7 +94,7 @@
 
   &.style2 {
     @include color(invert);
-    background-image: url('../../images/overlay.png'), linear-gradient(45deg, #{mix(_palette(accent5), _palette(accent1), 50)}, #{mix(_palette(accent5), _palette(accent4), 50)});
+    background-image: url('../../images/overlay.png'), linear-gradient(45deg, #{mix(_palette(accent5), _palette(accent5), 50)}, #{mix(_palette(accent5), _palette(accent5), 50)});
 
     > * {
       &:before {
