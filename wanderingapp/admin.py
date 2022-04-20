@@ -8,7 +8,7 @@ class SliderImageAdmin(admin.StackedInline):
 
 
 @admin.register(Slider)
-class PostAdmin(admin.ModelAdmin):
+class SliderAdmin(admin.ModelAdmin):
     inlines = [SliderImageAdmin]
 
     class Meta:
@@ -19,5 +19,3 @@ class PostAdmin(admin.ModelAdmin):
 class SliderImageAdmin(admin.ModelAdmin):
     def __str__(self):
         return self.title
-        return format_html('<img src="{}" />'.format(obj.image.url))
-

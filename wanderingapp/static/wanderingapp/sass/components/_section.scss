@@ -2,60 +2,60 @@
 /* Section/Article */
 
 section, article {
-	&.special {
-		text-align: center;
-	}
+  &.special {
+    text-align: left;
+  }
 }
 
 header {
-	p {
-		position: relative;
-		margin: 0 0 (_size(element-margin) * 0.75) 0;
-	}
+  p {
+    position: relative;
+    margin: 0 0 (_size(element-margin) * 0.75) 0;
+  }
 
-	h1 + p {
-		font-size: 1.25rem;
-		margin-top: (_size(element-margin) * -0.5);
-	}
+  h1 + p {
+    font-size: 1.25rem;
+    margin-top: (_size(element-margin) * -0.5);
+  }
 
-	h2 + p {
-		font-size: 1.25rem;
-		margin-top: (_size(element-margin) * -0.5);
-	}
+  h2 + p {
+    font-size: 1.25rem;
+    margin-top: (_size(element-margin) * -0.5);
+  }
 
-	h3 + p {
-		font-size: 1.1rem;
-		margin-top: (_size(element-margin) * -0.4);
-	}
+  h3 + p {
+    font-size: 1.25rem;
+    margin-top: (_size(element-margin) * -0.4);
+  }
 
-	h4 + p,
-	h5 + p,
-	h6 + p {
-		font-size: 0.9rem;
-		margin-top: (_size(element-margin) * -0.3);
-	}
+  h4 + p,
+  h5 + p,
+  h6 + p {
+    font-size: 0.9rem;
+    margin-top: (_size(element-margin) * -0.3);
+  }
 
-	@include breakpoint('<=small') {
-		h1 + p {
-			font-size: 1rem;
-			margin-top: (_size(element-margin) * -0.125);
-		}
+  @include breakpoint('<=small') {
+    h1 + p {
+      font-size: 1rem;
+      margin-top: (_size(element-margin) * -0.125);
+    }
 
-		h2 + p {
-			font-size: 1rem;
-			margin-top: (_size(element-margin) * -0.3);
-		}
+    h2 + p {
+      font-size: 1rem;
+      margin-top: (_size(element-margin) * -0.3);
+    }
 
-		h3 + p {
-			font-size: 1rem;
-			margin-top: (_size(element-margin) * -0.3);
-		}
+    h3 + p {
+      font-size: 1rem;
+      margin-top: (_size(element-margin) * -0.3);
+    }
 
-		h4 + p,
-		h5 + p,
-		h6 + p {
-			font-size: 1rem;
-			margin-top: (_size(element-margin) * -0.3);
-		}
-	}
+    h4 + p,
+    h5 + p,
+    h6 + p {
+      font-size: 1rem;
+      margin-top: (_size(element-margin) * -0.3);
+    }
+  }
 }

@@ -178,9 +178,10 @@ input[type=button]:hover,
 button:hover,
 .button:hover {
   background-color: rgba(95, 141, 86, 0);
-  transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
-  box-shadow: inset 0 0 0 3px rgba(95, 141, 86, 0.78);
-  color: rgba(95, 141, 86, 0.78) !important;
+  transition: width 0.4s ease-in-out, height 0.7s ease-in-out;
+  box-shadow: inset 3px 0 0 3px rgba(95, 141, 86, 0.78);
+  color: #3B5622 !important;
+  transform: translateX(50%, -50%);
 }
 input[type=submit]:hover:before,
 input[type=reset]:hover:before,
@@ -1886,9 +1887,10 @@ input[type=button]:hover,
 button:hover,
 .button:hover {
   background-color: rgba(95, 141, 86, 0);
-  transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
-  box-shadow: inset 0 0 0 3px rgba(95, 141, 86, 0.78);
-  color: rgba(95, 141, 86, 0.78) !important;
+  transition: width 0.4s ease-in-out, height 0.7s ease-in-out;
+  box-shadow: inset 3px 0 0 3px rgba(95, 141, 86, 0.78);
+  color: #3B5622 !important;
+  transform: translateX(50%, -50%);
 }
 input[type=submit]:hover:before,
 input[type=reset]:hover:before,
@@ -2607,7 +2609,7 @@ ul.icons li .icon:before {
 
 /* Section/Article */
 section.special, article.special {
-  text-align: center;
+  text-align: left;
 }
 
 header p {
@@ -2623,7 +2625,7 @@ header h2 + p {
   margin-top: -1rem;
 }
 header h3 + p {
-  font-size: 1.1rem;
+  font-size: 1.25rem;
   margin-top: -0.8rem;
 }
 header h4 + p,
@@ -2770,9 +2772,10 @@ table.alt tbody tr td {
 .banner button:hover,
 .banner .button:hover {
   background-color: rgba(255, 255, 255, 0.1);
-  transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
-  box-shadow: inset 0 0 0 3px #ffffff;
-  color: #ffffff !important;
+  transition: width 0.4s ease-in-out, height 0.7s ease-in-out;
+  box-shadow: inset 3px 0 0 3px #ffffff;
+  color: #6dc098 !important;
+  transform: translateX(50%, -50%);
 }
 .banner input[type=submit]:hover:before,
 .banner input[type=reset]:hover:before,
@@ -3459,9 +3462,10 @@ body.is-preload .banner h1, body.is-preload .banner .actions {
 .main.style2 button:hover,
 .main.style2 .button:hover {
   background-color: rgba(255, 255, 255, 0.1);
-  transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
-  box-shadow: inset 0 0 0 3px #ffffff;
-  color: #ffffff !important;
+  transition: width 0.4s ease-in-out, height 0.7s ease-in-out;
+  box-shadow: inset 3px 0 0 3px #ffffff;
+  color: #6dc098 !important;
+  transform: translateX(50%, -50%);
 }
 .main.style2 input[type=submit]:hover:before,
 .main.style2 input[type=reset]:hover:before,

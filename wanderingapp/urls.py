@@ -9,5 +9,4 @@ app_name = 'wanderingapp'
 
 urlpatterns = [
     path("add/", views.addPhoto, name="addPhoto")
-
 ]
