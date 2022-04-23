@@ -24,3 +24,6 @@ class SliderImageAdmin(admin.ModelAdmin):
 
     def __str__(self):
         return self.title
+
+
+admin.site.site_header = 'Wandering Waters Dashboard'
