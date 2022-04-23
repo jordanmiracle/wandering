@@ -16,6 +16,7 @@ class SliderImage(models.Model):
 
     def image_preview(self):
         if self.images:
-            return mark_safe('<img src="{0}" width="max-width" height="300" />'.format(self.images.url))
+            return mark_safe(
+                '<img src="{0}" width="max-width" height="300" border="2px solid black" />'.format(self.images.url))
         else:
             return '(No Image)'
