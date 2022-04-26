@@ -2006,7 +2006,7 @@ ul.icons {
         font-size: 1.25rem; } }
 /* Section/Article */
 section.special, article.special {
-  text-align: left; }
+  text-align: center; }
 
 header p {
   position: relative;
@@ -2022,7 +2022,7 @@ header h2 + p {
 
 header h3 + p {
   font-size: 1.25rem;
-  margin-top: -0.8rem; }
+  margin-top: -0.6rem; }
 
 header h4 + p,
 header h5 + p,
