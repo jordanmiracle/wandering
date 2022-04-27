@@ -3339,7 +3339,7 @@ body.is-preload .banner h1, body.is-preload .banner .actions {
   background: #dde1eb;
 }
 .main > *.small {
-  width: 48rem;
+  width: 70rem;
 }
 .main > *.medium {
   width: 60rem;
