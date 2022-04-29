@@ -3348,7 +3348,7 @@ body.is-preload .banner h1, body.is-preload .banner .actions {
   display: none;
 }
 .main > header {
-  padding: 7rem 6rem 5rem 6rem;
+  padding: 4rem 6rem 2rem 6rem;
   text-align: center;
   margin: 0 auto;
 }
@@ -3666,7 +3666,7 @@ body.is-preload .banner h1, body.is-preload .banner .actions {
 }
 @media screen and (max-width: 736px) {
   .main > header {
-    padding: 3rem 2rem 1rem 2rem;
+    padding: 3rem 1rem 1rem 1rem;
   }
   .main > header > :first-child {
     padding-bottom: 1.5rem;
