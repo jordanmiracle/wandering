@@ -2941,7 +2941,7 @@ body.is-preload .banner h1, body.is-preload .banner .actions {
 }
 @media screen and (max-width: 980px) {
   .banner {
-    padding: 18rem 3rem 16rem 3rem;
+    padding: 9rem 3rem 7rem 3rem;
   }
 }
 @media screen and (max-width: 736px) {

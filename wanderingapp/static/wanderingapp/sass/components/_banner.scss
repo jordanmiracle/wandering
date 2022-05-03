@@ -95,7 +95,7 @@
   }
 
   @include breakpoint('<=medium') {
-    @include padding(18rem, 3rem);
+    @include padding(9rem, 3rem);
   }
 
   @include breakpoint('<=small') {
