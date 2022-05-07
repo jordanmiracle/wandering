@@ -16,12 +16,11 @@
     position: absolute;
     top: 0;
     left: 0;
-    max-height: 100%;
-    max-width: 100%;
+    height: 100%;
+    width: fit-content;
     overflow: hidden;
     z-index: -1;
     border-radius: .5em;
-    max-width: 100%;
 
 
     &:before {
@@ -88,6 +87,7 @@
     }
   }
 
+
   /******Padding for Banner *******/
 
   @include breakpoint('<=large') {
@@ -99,7 +99,7 @@
   }
 
   @include breakpoint('<=small') {
-    @include padding(6rem, 3rem);
+    @include padding(18rem, 3rem);
   }
 
   @include breakpoint('<=xsmall') {

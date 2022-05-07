@@ -29,11 +29,6 @@ html {
 }
 
 body {
-  background: repeating-linear-gradient(40deg, #FFFFFA, #FFFFF6, #ffffff) repeat,
-  no-repeat,
-  no-repeat top left,
-  top left,
-  bottom left;
 
   // Stops initial animations until page loads.
   &.is-preload {
