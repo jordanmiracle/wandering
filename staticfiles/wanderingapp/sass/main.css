@@ -163,7 +163,7 @@ button,
     background-color: rgba(95, 141, 86, 0);
     transition: width 0.4s ease-in-out, height 0.7s ease-in-out;
     box-shadow: inset 3px 0 0 3px rgba(95, 141, 86, 0.78);
-    color: #3B5622 !important;
+    color: #3B5622;
     transform: translateX(50%, -50%); }
     input[type="submit"]:hover:before,
     input[type="reset"]:hover:before,
@@ -177,8 +177,7 @@ button,
   button:active,
   .button:active {
     background-color: rgba(95, 141, 86, 0.13);
-    box-shadow: inset 0 0 0 3px rgba(95, 141, 86, 0.78);
-    color: rgba(95, 141, 86, 0.78) !important; }
+    box-shadow: inset 0 0 0 3px rgba(95, 141, 86, 0.78); }
     input[type="submit"]:active:before,
     input[type="reset"]:active:before,
     input[type="button"]:active:before,
@@ -1413,7 +1412,7 @@ button,
     background-color: rgba(95, 141, 86, 0);
     transition: width 0.4s ease-in-out, height 0.7s ease-in-out;
     box-shadow: inset 3px 0 0 3px rgba(95, 141, 86, 0.78);
-    color: #3B5622 !important;
+    color: #3B5622;
     transform: translateX(50%, -50%); }
     input[type="submit"]:hover:before,
     input[type="reset"]:hover:before,
@@ -1427,8 +1426,7 @@ button,
   button:active,
   .button:active {
     background-color: rgba(95, 141, 86, 0.13);
-    box-shadow: inset 0 0 0 3px rgba(95, 141, 86, 0.78);
-    color: rgba(95, 141, 86, 0.78) !important; }
+    box-shadow: inset 0 0 0 3px rgba(95, 141, 86, 0.78); }
     input[type="submit"]:active:before,
     input[type="reset"]:active:before,
     input[type="button"]:active:before,
@@ -1743,7 +1741,7 @@ span.icon:before {
   color: #a7b58f; }
 
 .icon.accent3 {
-  color: #6e9e64; }
+  color: #fffff6; }
 
 .icon.accent4 {
   color: #30642aeb; }
@@ -2146,7 +2144,7 @@ table.alt tbody tr td {
       background-color: rgba(255, 255, 255, 0.1);
       transition: width 0.4s ease-in-out, height 0.7s ease-in-out;
       box-shadow: inset 3px 0 0 3px #ffffff;
-      color: #6dc098 !important;
+      color: #6dc098;
       transform: translateX(50%, -50%); }
       .banner input[type="submit"]:hover:before,
       .banner input[type="reset"]:hover:before,
@@ -2160,8 +2158,7 @@ table.alt tbody tr td {
     .banner button:active,
     .banner .button:active {
       background-color: rgba(255, 255, 255, 0.35);
-      box-shadow: inset 0 0 0 3px #ffffff;
-      color: #ffffff !important; }
+      box-shadow: inset 0 0 0 3px #ffffff; }
       .banner input[type="submit"]:active:before,
       .banner input[type="reset"]:active:before,
       .banner input[type="button"]:active:before,
@@ -2672,7 +2669,7 @@ table.alt tbody tr td {
         background-color: rgba(255, 255, 255, 0.1);
         transition: width 0.4s ease-in-out, height 0.7s ease-in-out;
         box-shadow: inset 3px 0 0 3px #ffffff;
-        color: #6dc098 !important;
+        color: #6dc098;
         transform: translateX(50%, -50%); }
         .main.style2 input[type="submit"]:hover:before,
         .main.style2 input[type="reset"]:hover:before,
@@ -2686,8 +2683,7 @@ table.alt tbody tr td {
       .main.style2 button:active,
       .main.style2 .button:active {
         background-color: rgba(255, 255, 255, 0.35);
-        box-shadow: inset 0 0 0 3px #ffffff;
-        color: #ffffff !important; }
+        box-shadow: inset 0 0 0 3px #ffffff; }
         .main.style2 input[type="submit"]:active:before,
         .main.style2 input[type="reset"]:active:before,
         .main.style2 input[type="button"]:active:before,
@@ -2769,7 +2765,7 @@ table.alt tbody tr td {
     .main.style2 .icon.accent2 {
       color: #bfc9ae; }
     .main.style2 .icon.accent3 {
-      color: #8bb283; }
+      color: white; }
     .main.style2 .icon.accent4 {
       color: #f4d7a6; }
     .main.style2 .icon.accent5 {
