@@ -133,7 +133,7 @@ button {
       background-color: transparentize(_palette($p, highlight), 0.9);
       transition: width 0.4s ease-in-out, height 0.7s ease-in-out;
       box-shadow: inset 3px 0 0 3px _palette($p, highlight);
-      color: _palette($p, accent5) !important;
+      color: _palette($p, accent5);
       transform: translateX(50%, -50%);
 
       &:before {
@@ -145,7 +145,6 @@ button {
     &:active {
       background-color: transparentize(_palette($p, highlight), 0.65);
       box-shadow: inset 0 0 0 3px _palette($p, highlight);
-      color: _palette($p, highlight) !important;
 
       &:before {
         color: inherit;
