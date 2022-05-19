@@ -17,7 +17,7 @@
       <excludeFolder url="file://$MODULE_DIR$/.env" />
     </content>
     <content url="file://$MODULE_DIR$/frontend/build/static/vue/js" />
-    <orderEntry type="jdk" jdkName="Python 3.10 (wandering) (2)" jdkType="Python SDK" />
+    <orderEntry type="jdk" jdkName="Python 3.10 (wandering)" jdkType="Python SDK" />
     <orderEntry type="sourceFolder" forTests="false" />
     <orderEntry type="library" name="scrollreveal" level="application" />
     <orderEntry type="library" name="vue" level="application" />
