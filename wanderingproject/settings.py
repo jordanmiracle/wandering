@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'sass_processor',
     'crispy_forms',
     'members',
+    'adminsortable',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
