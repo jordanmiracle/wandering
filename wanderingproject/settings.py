@@ -19,7 +19,6 @@ import dj_database_url
 from django.conf.urls import static
 from django.core.management.utils import get_random_secret_key
 
-
 BASE_DIR = Path(__file__).resolve().parent.parent
 
 # Quick-start development settings - unsuitable for production
@@ -32,9 +31,7 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
 DEBUG = os.getenv("DEBUG", "False") == "True"
 DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
 
-
-ALLOWED_HOSTS = os.getenv("DJANGO_ALLOWED_HOSTS", "127.0.0.1,localhost").split(",")
-
+ALLOWED_HOSTS = "*"
 
 # Application definition
 
@@ -90,12 +87,12 @@ WSGI_APPLICATION = 'wanderingproject.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-#DATABASES = {
+# DATABASES = {
 #    'default': {
 #        'ENGINE': 'django.db.backends.sqlite3',
 #        'NAME': BASE_DIR / 'db.sqlite3',
 #    }
-#}
+# }
 
 if DEVELOPMENT_MODE is True:
     DATABASES = {
@@ -155,7 +152,6 @@ STATICFILES = [
     BASE_DIR / 'static'
 ]
 STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
-
 
 # STATICFILES_FINDERS = 'djangobower.finders.BowerFinder'
 
