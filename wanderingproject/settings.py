@@ -151,7 +151,8 @@ STATIC_URL = '/static/'
 STATICFILES = [
     BASE_DIR / 'static'
 ]
-STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
+
+#STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 
 # STATICFILES_FINDERS = 'djangobower.finders.BowerFinder'
 
