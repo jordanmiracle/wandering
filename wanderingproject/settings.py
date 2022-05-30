@@ -31,7 +31,7 @@ SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
 DEBUG = os.getenv("DEBUG", "False") == "True"
 DEVELOPMENT_MODE = os.getenv("DEVELOPMENT_MODE", "False") == "True"
 
-ALLOWED_HOSTS = ["*, mtbakerweddings.com, www.mtbakerweddings.com, dolphin-app-pnsr3.ondigitalocean.app"]
+ALLOWED_HOSTS = ["'*', 'mtbakerweddings.com', 'www.mtbakerweddings.com', 'dolphin-app-pnsr3.ondigitalocean.app'"]
 
 # Application definition
 
@@ -154,7 +154,6 @@ STATICFILES = [
 
 #STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 
-# STATICFILES_FINDERS = 'djangobower.finders.BowerFinder'
 
 MEDIA_ROOT = BASE_DIR / 'media'
 MEDIA_URL = '/media/'
