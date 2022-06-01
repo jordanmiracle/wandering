@@ -2729,102 +2729,7 @@ table.alt tbody tr td {
   text-align: center;
   /******Padding for Banner *******/
 }
-.banner input[type=submit],
-.banner input[type=reset],
-.banner input[type=button],
-.banner button,
-.banner .button {
-  color: #ffffff !important;
-  box-shadow: inset 0 0 0 3px #ffffff;
-}
-.banner input[type=submit].icon:before,
-.banner input[type=reset].icon:before,
-.banner input[type=button].icon:before,
-.banner button.icon:before,
-.banner .button.icon:before {
-  color: #ffffff;
-}
-.banner input[type=submit].icon .button,
-.banner input[type=reset].icon .button,
-.banner input[type=button].icon .button,
-.banner button.icon .button,
-.banner .button.icon .button {
-  display: block;
-  border-radius: 50%;
-  transition: width 0.4s ease-in-out, height 0.4s ease-in-out;
-  transform: translate(-50%, -50%);
-  z-index: -1;
-}
-.banner input[type=submit].next:before,
-.banner input[type=reset].next:before,
-.banner input[type=button].next:before,
-.banner button.next:before,
-.banner .button.next:before {
-  color: #ffffff;
-}
-.banner input[type=submit]:hover,
-.banner input[type=reset]:hover,
-.banner input[type=button]:hover,
-.banner button:hover,
-.banner .button:hover {
-  background-color: rgba(255, 255, 255, 0.1);
-  transition: width 0.4s ease-in-out, height 0.7s ease-in-out;
-  box-shadow: inset 3px 0 0 3px #ffffff;
-  color: #6dc098;
-  transform: translateX(50%, -50%);
-}
-.banner input[type=submit]:hover:before,
-.banner input[type=reset]:hover:before,
-.banner input[type=button]:hover:before,
-.banner button:hover:before,
-.banner .button:hover:before {
-  color: inherit;
-}
-.banner input[type=submit]:active,
-.banner input[type=reset]:active,
-.banner input[type=button]:active,
-.banner button:active,
-.banner .button:active {
-  background-color: rgba(255, 255, 255, 0.35);
-  box-shadow: inset 0 0 0 3px #ffffff;
-}
-.banner input[type=submit]:active:before,
-.banner input[type=reset]:active:before,
-.banner input[type=button]:active:before,
-.banner button:active:before,
-.banner .button:active:before {
-  color: inherit;
-}
-.banner input[type=submit].primary,
-.banner input[type=reset].primary,
-.banner input[type=button].primary,
-.banner button.primary,
-.banner .button.primary {
-  box-shadow: none;
-  background-color: #ffffff;
-  color: #77917b !important;
-}
-.banner input[type=submit].primary:before,
-.banner input[type=reset].primary:before,
-.banner input[type=button].primary:before,
-.banner button.primary:before,
-.banner .button.primary:before {
-  color: rgba(119, 145, 123, 0.5);
-}
-.banner input[type=submit].primary:hover,
-.banner input[type=reset].primary:hover,
-.banner input[type=button].primary:hover,
-.banner button.primary:hover,
-.banner .button.primary:hover {
-  background-color: white;
-}
-.banner input[type=submit].primary:active,
-.banner input[type=reset].primary:active,
-.banner input[type=button].primary:active,
-.banner button.primary:active,
-.banner .button.primary:active {
-  background-color: #f3f2f2;
-}
+
 .banner input, .banner select, .banner textarea {
   color: #ffffff;
 }
@@ -2861,36 +2766,7 @@ table.alt tbody tr td {
   z-index: -1;
   border-radius: 0.5em;
 }
-.banner .image:before {
-  -moz-transition: opacity 1.3125s ease-in-out;
-  -webkit-transition: opacity 1.3125s ease-in-out;
-  -ms-transition: opacity 1.3125s ease-in-out;
-  transition: opacity 1.3125s ease-in-out;
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0.7;
-  z-index: 1;
-}
-.banner .image:after {
-  -moz-transition: opacity 1.3125s ease-in-out;
-  -webkit-transition: opacity 1.3125s ease-in-out;
-  -ms-transition: opacity 1.3125s ease-in-out;
-  transition: opacity 1.3125s ease-in-out;
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  opacity: 0;
-  z-index: 1;
-}
+
 .banner .image img {
   -moz-transition: -moz-transform 2.1875s ease-out, -moz-filter 2.1875s ease-out;
   -webkit-transition: -webkit-transform 2.1875s ease-out, -webkit-filter 2.1875s ease-out;
@@ -3370,6 +3246,7 @@ body.is-preload .banner h1, body.is-preload .banner .actions {
 }
 .main > .image img {
   width: 100%;
+  height: auto;
 }
 .main > .inner {
   padding: 6rem 6rem 4rem 6rem;
@@ -3385,7 +3262,7 @@ body.is-preload .banner h1, body.is-preload .banner .actions {
 }
 .main.style2 {
   color: #ffffff;
-  background-image: url("../../images/overlay.png"), linear-gradient(45deg, #3b5622, #3b5622);
+  background-image: linear-gradient(45deg, #3b5622, #3b5622);
 }
 .main.style2 input, .main.style2 select, .main.style2 textarea {
   color: #ffffff;
