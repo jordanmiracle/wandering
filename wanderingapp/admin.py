@@ -2,21 +2,23 @@ from django.contrib import admin
 from django.utils.html import format_html
 from .models import Slider, SliderImage
 from django.contrib import admin
-from adminsortable2.admin import SortableAdminMixin
+from adminsortable2.admin import SortableAdminMixin, SortableInlineAdminMixin, SortableGenericInlineAdminMixin, \
+    SortableAdminBase
 
 
-#@admin.register(SliderImage)
-#class SortableSliderImageAdmin(SortableAdminMixin, admin.ModelAdmin):
+# @admin.register(SliderImage)
+# class SortableSliderImageAdmin(SortableAdminMixin, admin.ModelAdmin):
 #    pass
 
 
-class SliderImageAdmin(admin.TabularInline):
+class SliderImageAdmin(SortableInlineAdminMixin, admin.TabularInline):
     model = SliderImage
     readonly_fields = ('image_preview',)
+    ordering = ['image_order']
 
 
 @admin.register(Slider)
-class SliderAdmin(admin.ModelAdmin):
+class SliderAdmin(SortableAdminBase, admin.ModelAdmin):
     inlines = [SliderImageAdmin]
     ordering = ['image_order']
 
@@ -29,7 +31,6 @@ class SliderAdmin(admin.ModelAdmin):
 
 @admin.register(SliderImage)
 class SliderImageAdmin(SortableAdminMixin, admin.ModelAdmin):
-
     ordering = ['image_order']
 
     def __str__(self):
