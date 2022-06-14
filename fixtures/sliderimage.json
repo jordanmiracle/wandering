@@ -1,0 +1,53 @@
+[
+{
+    "model": "wanderingapp.sliderimage",
+    "pk": 1,
+    "fields": {
+        "slider": 1,
+        "title": "Katheryn Moran 5 - Couple holding hands on bridge",
+        "images": "bellingham-wedding-photographer-katheryn-moran-wandering-waters-5.jpg",
+        "image_order": 4
+    }
+},
+{
+    "model": "wanderingapp.sliderimage",
+    "pk": 2,
+    "fields": {
+        "slider": 1,
+        "title": "Moran 10 - Ceremony Area",
+        "images": "bellingham-wedding-photographer-katheryn-moran-wandering-waters-10.jpg",
+        "image_order": 3
+    }
+},
+{
+    "model": "wanderingapp.sliderimage",
+    "pk": 4,
+    "fields": {
+        "slider": 1,
+        "title": "Jessica, Jason, Puppy",
+        "images": "JessicaJasonWedding_0286.jpg",
+        "image_order": 2
+    }
+},
+{
+    "model": "wanderingapp.sliderimage",
+    "pk": 5,
+    "fields": {
+        "slider": 1,
+        "title": "Pavilion at night - C",
+        "images": "Pavilion_at_night_C.jpg",
+        "image_order": 5
+    }
+},
+{
+    "model": "wanderingapp.sliderimage",
+    "pk": 7,
+    "fields": {
+        "slider": 1,
+        "title": "Bragman - 1500 Cropped",
+        "images": "bragman-1500-cropped.png",
+        "image_order": 1
+    }
+}
+]
+

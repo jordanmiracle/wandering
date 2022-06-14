@@ -1,0 +1,10 @@
+[
+{
+    "model": "wanderingapp.slider",
+    "pk": 1,
+    "fields": {
+        "image": "bragman-1500-cropped_6CwioRV.png",
+        "image_order": 0
+    }
+}
+]
