@@ -121,7 +121,7 @@
                 <div class="carousel-inner" role="listbox">
                     {% for photo in photos %}
                         <div class="carousel-item {% if forloop.counter0 == 0 %} active {% endif %}">
-                            <img class="d-block w-100" src="{{ photo.images.url }}">
+                            <img class="d-block w-100" src="{{ photo.images.url }}" alt="">
                         </div>
                     {% endfor %}
 
