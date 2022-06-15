@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils.safestring import mark_safe
+from wanderingproject.storage_backends import MediaStorage, PublicMediaStorage
 
 
 class Slider(models.Model):
@@ -13,7 +14,8 @@ class Slider(models.Model):
 class SliderImage(models.Model):
     slider = models.ForeignKey(Slider, default=None, on_delete=models.CASCADE)
     title = models.CharField(blank=True, null=True, max_length=250, default='')
-    images = models.FileField(upload_to='')
+    images = models.FileField(null=False, blank=False, storage=MediaStorage)
+    ## images = models.FileField(null=False, blank=False, upload_to='') ## This is for local development
     image_order = models.PositiveIntegerField(default=1, blank=False, null=False)
 
     class Meta:
