@@ -14,7 +14,13 @@ import os
 from pathlib import Path
 import sys
 import dj_database_url
-
+from django.core.management import utils
+import boto3
+import base64
+from storages.backends.s3boto3 import S3Boto3Storage
+from botocore.exceptions import ClientError
+import json
+from django.core.exceptions import ImproperlyConfigured
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 from django.conf.urls import static
 from django.core.management.utils import get_random_secret_key
@@ -25,12 +31,33 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv("DJANGO_SECRET_KEY", get_random_secret_key())
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '*', 'mtbakerweddings.com', 'www.mtbakerweddings.com']
+SITE_ID = 1
+
+if not DEBUG:
+    SECURE_SSL_REDIRECT = True
+    SESSION_COOKIE_SECURE = True
+    CSRF_COOKIE_SECURE = True
+    SECURE_HSTS_SECONDS = 60
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+    SECURE_HSTS_PRELOAD = True
+else:
+    SESSION_COOKIE_SECURE = False
+    CSRF_COOKIE_SECURE = False
+    SECURE_SSL_REDIRECT = False
+    CORS_REPLACE_HTTPS_REFERER = False
+    HOST_SCHEME = "http://"
+    SECURE_PROXY_SSL_HEADER = None
+    SECURE_HSTS_SECONDS = None
+    SECURE_HSTS_INCLUDE_SUBDOMAINS = False
+    SECURE_FRAME_DENY = False
+
+
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '*', 'mtbakerweddings.com', 'www.mtbakerweddings.com',
+                 'powerful-springs-35355.herokuapp.com']
 
 # Application definition
 
@@ -42,6 +69,7 @@ INSTALLED_APPS = [
     'members',
     'adminsortable2',
     'admin_interface',
+    'colorfield',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -53,6 +81,8 @@ INSTALLED_APPS = [
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
+
     'django.contrib.sessions.middleware.SessionMiddleware',
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -94,19 +124,16 @@ WSGI_APPLICATION = 'wanderingproject.wsgi.application'
 #    }
 # }
 
-if DEVELOPMENT_MODE is True:
-    DATABASES = {
-        "default": {
-            "ENGINE": "django.db.backends.sqlite3",
-            "NAME": os.path.join(BASE_DIR, "db.sqlite3"),
-        }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'wanderingdb',
+        'USER': 'miracle',
+        'PASSWORD': 'Likeacarrot23!',
+        'HOST': 'localhost',
+        'PORT': '5432',
     }
-elif len(sys.argv) > 0 and sys.argv[1] != 'collectstatic':
-    if os.getenv("DATABASE_URL", None) is None:
-        raise Exception("DATABASE_URL environment variable not defined")
-    DATABASES = {
-        "default": dj_database_url.parse(os.environ.get("DATABASE_URL")),
-    }
+}
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -142,21 +169,21 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-STATIC_URL = '/static/'
+#STATIC_URL = '/static/'
 
-# STATICFILES_DIRS = [
-#    os.path.join(BASE_DIR, 'static')
-# ]
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+]
 
 STATICFILES = [
     BASE_DIR / 'static'
 ]
 
-#STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
+# STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 
 
-MEDIA_ROOT = BASE_DIR / 'media'
-MEDIA_URL = '/media/'
+#MEDIA_ROOT = BASE_DIR / 'media'
+#MEDIA_URL = '/media/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
@@ -181,3 +208,76 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = ""
 LOGOUT_REDIRECT_URL = "/"
+
+
+
+def get_secret():
+    secret_name = "jordanmiraclebucket"
+    region_name = "us-west-2"
+
+    # Create a Secrets Manager client
+    session = boto3.session.Session()
+    client = session.client(
+        service_name='secretsmanager',
+        region_name=region_name
+    )
+
+    # In this sample we only handle the specific exceptions for the 'GetSecretValue' API.
+    # See https://docs.aws.amazon.com/secretsmanager/latest/apireference/API_GetSecretValue.html
+    # We rethrow the exception by default.
+
+    try:
+        get_secret_value_response = client.get_secret_value(
+            SecretId=secret_name
+        )
+    except ClientError as e:
+        if e.response['Error']['Code'] == 'DecryptionFailureException':
+            # Secrets Manager can't decrypt the protected secret text using the provided KMS key.
+            # Deal with the exception here, and/or rethrow at your discretion.
+            raise e
+        elif e.response['Error']['Code'] == 'InternalServiceErrorException':
+            # An error occurred on the server side.
+            # Deal with the exception here, and/or rethrow at your discretion.
+            raise e
+        elif e.response['Error']['Code'] == 'InvalidParameterException':
+            # You provided an invalid value for a parameter.
+            # Deal with the exception here, and/or rethrow at your discretion.
+            raise e
+        elif e.response['Error']['Code'] == 'InvalidRequestException':
+            # You provided a parameter value that is not valid for the current state of the resource.
+            # Deal with the exception here, and/or rethrow at your discretion.
+            raise e
+        elif e.response['Error']['Code'] == 'ResourceNotFoundException':
+            # We can't find the resource that you asked for.
+            # Deal with the exception here, and/or rethrow at your discretion.
+            raise e
+    else:
+        # Decrypts secret using the associated KMS CMK.
+        # Depending on whether the secret is a string or binary, one of these fields will be populated.
+        if 'SecretString' in get_secret_value_response:
+            secret = get_secret_value_response['SecretString']
+        else:
+            decoded_binary_secret = base64.b64decode(get_secret_value_response['SecretBinary'])
+
+AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
+AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
+AWS_STORAGE_BUCKET_NAME = 'wanderingbucket'
+AWS_S3_FILE_OVERWRITE = False
+#AWS_DEFAULT_ACL = 'public-read'
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+AWS_S3_OBJECT_PARAMETERS = {
+    'CacheControl': 'max-age=86400',
+ }
+AWS_MEDIA_LOCATION = 'media'
+AWS_PUBLIC_LOCATION = 'public'
+PRIVATE_FILE_STORAGE = 'wanderingprojectproject.storage_backends.MediaStorage'
+AWS_S3_REGION_NAME = 'us-west-2'
+AWS_LOCATION = 'static'
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
+
+PUBLIC_MEDIA_LOCATION = 'media'
+MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+
