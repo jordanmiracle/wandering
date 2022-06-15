@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils.safestring import mark_safe
-from wanderingproject.storage_backends import MediaStorage, PublicMediaStorage
+from wanderingproject.storage_backends import MediaStorage
 
 
 class Slider(models.Model):

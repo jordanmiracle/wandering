@@ -28,6 +28,8 @@ from django.core.management.utils import get_random_secret_key
 from psycopg2 import connect
 import psycopg2 as db
 import django_on_heroku
+from storages.backends.s3boto3 import S3Boto3Storage
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -73,6 +75,7 @@ INSTALLED_APPS = [
     'adminsortable2',
     'admin_interface',
     'colorfield',
+    'storages',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
