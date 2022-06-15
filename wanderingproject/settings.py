@@ -20,10 +20,14 @@ import base64
 from storages.backends.s3boto3 import S3Boto3Storage
 from botocore.exceptions import ClientError
 import json
+from django.contrib import staticfiles, postgres
 from django.core.exceptions import ImproperlyConfigured
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 from django.conf.urls import static
 from django.core.management.utils import get_random_secret_key
+from psycopg2 import connect
+import psycopg2 as db
+import django_on_heroku
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -54,7 +58,6 @@ else:
     SECURE_HSTS_SECONDS = None
     SECURE_HSTS_INCLUDE_SUBDOMAINS = False
     SECURE_FRAME_DENY = False
-
 
 ALLOWED_HOSTS = ['localhost', '127.0.0.1', '*', 'mtbakerweddings.com', 'www.mtbakerweddings.com',
                  'powerful-springs-35355.herokuapp.com']
@@ -125,7 +128,6 @@ WSGI_APPLICATION = 'wanderingproject.wsgi.application'
 # }
 
 
-
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
@@ -160,7 +162,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
-#STATIC_URL = '/static/'
+# STATIC_URL = '/static/'
 
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
@@ -173,8 +175,8 @@ STATICFILES = [
 # STATICFILES_DIRS = (os.path.join(BASE_DIR, "static"),)
 
 
-#MEDIA_ROOT = BASE_DIR / 'media'
-#MEDIA_URL = '/media/'
+# MEDIA_ROOT = BASE_DIR / 'media'
+# MEDIA_URL = '/media/'
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 
@@ -199,7 +201,6 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = ""
 LOGOUT_REDIRECT_URL = "/"
-
 
 
 def get_secret():
@@ -250,15 +251,27 @@ def get_secret():
         else:
             decoded_binary_secret = base64.b64decode(get_secret_value_response['SecretBinary'])
 
+
+if DEBUG:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
+    }
+else:
+    django_on_heroku.settings(locals(), staticfiles=False)
+    DATABASES = {'default': dj_database_url.config(conn_max_age=600, ssl_require=True)}
+
 AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
 AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
 AWS_STORAGE_BUCKET_NAME = 'wanderingbucket'
 AWS_S3_FILE_OVERWRITE = False
-#AWS_DEFAULT_ACL = 'public-read'
+# AWS_DEFAULT_ACL = 'public-read'
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 AWS_S3_OBJECT_PARAMETERS = {
     'CacheControl': 'max-age=86400',
- }
+}
 AWS_MEDIA_LOCATION = 'media'
 AWS_PUBLIC_LOCATION = 'public'
 PRIVATE_FILE_STORAGE = 'wanderingprojectproject.storage_backends.MediaStorage'
@@ -270,5 +283,3 @@ STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 PUBLIC_MEDIA_LOCATION = 'media'
 MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
-
-
