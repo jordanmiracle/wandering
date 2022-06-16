@@ -397,7 +397,8 @@ body {
 
 body, input, select, textarea, p {
     font-family: "Josefin Sans", serif;
-    font-weight: 300;
+    font-weight: normal;
+    color: darkslategray;
     font-size: 1rem;
     line-height: 1.65;
 }
@@ -598,7 +599,7 @@ strong, b {
 }
 
 h1, h2, h3, h4, h5, h6 {
-    color: #7a7d86;
+    color: darkslategrey;
 }
 
 blockquote {
