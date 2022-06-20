@@ -7,7 +7,7 @@
 <head>
     <title>Wandering Waters</title>
     <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -34,6 +34,10 @@
             color: darkslategray;
         }
 
+        .banner {
+            box-shadow: none !important;
+        }
+
 
         .image {
             background-image: url( {{ photo.images.url }} );
@@ -44,6 +48,7 @@
             right: 0;
             bottom: 0;
             background-repeat: no-repeat;
+            box-shadow: none; !important;
         }
 
         header h3 + p {
