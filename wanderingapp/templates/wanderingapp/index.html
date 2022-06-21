@@ -7,9 +7,9 @@
 <head>
     <title>Wandering Waters</title>
     <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=yes"/>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0 user-scalable=yes"/>
+    <meta name="description"
+          content="With the spirit of Stewardship, Wandering Waters began over twenty years ago inspired by a vision to create an outdoor gathering space while preserving and enhancing the habitat for the wildlife whose space we share and whose existence we cherish. There are several ceremony sites and a gathering space featuring a timber framed party pavilion with a capacity to shelter ninety guests, a food service kitchen and bar, a covered stage, a hook up for food trucks, and more.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&family=Josefin+Sans:ital,wght@0,200;0,400;1,300&display=swap"
@@ -179,7 +179,7 @@
         </header>
         <footer>
             <ul class="actions special">
-                <li><a href="#" class="button next">Video tour<span></span></a></li>
+                <li><a href="{% url 'wanderingapp:coming_soon' %}" class="button next">Video tour<span></span></a></li>
             </ul>
         </footer>
     </section>
@@ -256,7 +256,6 @@
 
 <!-- The below -->
 <script src="{% static 'wanderingapp/js/jquery.min.js' %}"></script>
-<script src="{% static 'wanderingapp/js/jquery.dropotron.min.js' %}"></script>
 <script src="{% static 'wanderingapp/js/browser.min.js' %}"></script>
 <script src="{% static 'wanderingapp/js/breakpoints.min.js' %}"></script>
 <script src="{% static 'wanderingapp/js/util.js' %}"></script>

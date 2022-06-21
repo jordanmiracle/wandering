@@ -8,5 +8,5 @@ from wanderingapp import views
 app_name = 'wanderingapp'
 
 urlpatterns = [
-    path("add/", views.addPhoto, name="addPhoto")
+    path('coming_soon/', views.coming_soon, name='coming_soon'),
 ]

@@ -1,6 +1,5 @@
 /* Button */
 @import 'fontawesome-all.min.css';
-@import url("https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600,900,300italic,600italic,900italic");
 
 input[type=submit],
 input[type=reset],
@@ -3255,7 +3254,6 @@ table.alt tbody tr td {
     position: relative;
     text-align: center;
     padding: 25rem 3rem 25rem 3rem;
-    box-shadow: 0 1rem 4rem 0.125rem rgb(161 177 204 / 33%);
 
     /******Padding for Banner *******/
 }
@@ -4505,13 +4503,13 @@ body {
     width: 80rem;
     max-width: calc(100% - 7rem);
     margin: 0 auto;
-    padding: 3rem 0;
+    padding: 1rem 0;
     position: relative;
 }
 
 #wrapper > * {
     margin: 3.5rem 0 0 0;
-    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    box-shadow: #77917b 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
 #wrapper > :first-child {
