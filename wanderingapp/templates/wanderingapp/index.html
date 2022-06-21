@@ -67,6 +67,11 @@
             .banner {
                 padding: 16rem 3rem 4rem 3rem
             }
+
+            .map-responsive {
+                margin: 0 auto;
+                padding:0;
+            }
         }
 
         @media only screen and (min-width: 1280px) {
@@ -96,7 +101,6 @@
             height: 100%;
             width: 100%;
             position: absolute;
-
         }
 
         a {
@@ -175,17 +179,7 @@
         </footer>
     </section>
 
-    <!-- Section
-    <section class="main style1">
 
-
-        <header class="medium">
-
-        </header>
-
-
-    </section>
--->
     <!-- Section -->
     <section class="main style2">
         <header class="small">
@@ -193,6 +187,8 @@
         </header>
 
         <div class="inner special medium">
+            {% csrf_token %}
+            {{ form_start }}
             <form action="" name="contactForm" method="POST" onsubmit="return validateForm()">
                 <br>
                 <div class="fields">
@@ -251,6 +247,8 @@
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js" integrity="sha512-Tn2m0TIpgVyTzzvmxLNuqbSJH3JP8jm+Cy3hvHrW7ndTDcJ1w5mBiksqDBb8GpE2ksktFvDB/ykZ0mDpsZj20w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+
 <!-- The below -->
 <script src="{% static 'wanderingapp/js/jquery.min.js' %}"></script>
 <script src="{% static 'wanderingapp/js/jquery.dropotron.min.js' %}"></script>
@@ -258,7 +256,6 @@
 <script src="{% static 'wanderingapp/js/breakpoints.min.js' %}"></script>
 <script src="{% static 'wanderingapp/js/util.js' %}"></script>
 <script src="{% static 'wanderingapp/js/main.js' %}"></script>
-<script src="https://smtpjs.com/v3/smtp.js"></script>
 
 </body>
 </html>
