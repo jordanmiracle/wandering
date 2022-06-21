@@ -6,8 +6,7 @@ from wanderingapp.forms import ContactForm
 from .models import Slider, SliderImage
 from .forms import ContactForm
 from wanderingproject import settings
-from wanderingproject.settings import EMAIL_HOST_USER
-
+from django.conf import settings
 
 def blog_view(request):
     posts = Slider.objects.all()
@@ -26,7 +25,7 @@ def index(request):
             email = request.POST.get('email')
             message = request.POST.get('message')
 
-            send_mail('{}'.format(subject), '{}'.format(message), '{}'.format(email), [EMAIL_HOST_USER],
+            send_mail('{}'.format(subject), '{}'.format(message), '{}'.format(email), [settings.EMAIL_HOST_USER],
                       fail_silently=False)
             return HttpResponseRedirect(ContactForm)
     return render(request, 'wanderingapp/index.html', {
