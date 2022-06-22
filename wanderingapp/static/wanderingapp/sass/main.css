@@ -3261,14 +3261,13 @@ table.alt tbody tr td {
 .banner .image {
     pointer-events: none;
     position: absolute;
-
     top: 0;
     left: 0;
     height: 100%;
     width: fit-content;
     overflow: hidden;
     z-index: -1;
-    border-radius: 0.5em;
+    border-radius: 0.2em;
 }
 
 .banner .image img {
@@ -3816,6 +3815,8 @@ body.is-preload .banner h1, body.is-preload .banner .actions {
 
 .main > *.small {
     width: 70rem;
+    border-radius: 0.1em;
+
 }
 
 .main > *.medium {
@@ -3878,11 +3879,14 @@ body.is-preload .banner h1, body.is-preload .banner .actions {
 .main > footer {
     padding: 3rem 6rem 1rem 6rem;
     text-align: center;
+    border-radius: 0.1em;
 }
 
 .main.style2 {
     color: #ffffff;
     background-image: linear-gradient(45deg, #3b5622, #3b5622);
+    border-radius: 0.1em;
+
 }
 
 .main.style2 input, .main.style2 select, .main.style2 textarea {
@@ -4521,6 +4525,7 @@ body {
         padding: 3.5rem 0;
     }
 }
+
 @media screen and (max-width: 1280px) {
     #wrapper {
         max-width: calc(100% - 5rem);
