@@ -21,8 +21,6 @@
           integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
           crossorigin="anonymous" referrerpolicy="no-referrer"/>
 
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-
 
     <style>
         .title {
@@ -192,29 +190,26 @@
         </header>
 
         <div class="inner special medium">
-            {% csrf_token %}
-            {{ form_start }}
-            <form action="" name="contactForm" method="POST" onsubmit="return validateForm()">
+            <form action="mailto:ellen@mtbakerweddings.com" name="contactForm" method="get" enctype="application/x-www-form-urlencoded">
                 <br>
                 <div class="fields">
                     <div class="field half">
-                        <input name="name" id="name" placeholder="Name" type="text"/>
+                        <input name="name" type="text" id="name" placeholder="Name"/>
                     </div>
                     <div class="field half">
-                        <input name="email" id="email" placeholder="Email" type="email"/>
+                        <input name="email" id="email" placeholder="ellen@mtbakerweddings.com" type="email"/>
                     </div>
                     <div class="field">
                         <input name=subject id="name" placeholder="Subject" type="text">
                     </div>
                     <div class="field">
-                        <textarea name="message" id="message" rows="4" placeholder="Message"></textarea>
+                        <textarea name="message" id="message" rows="5" placeholder="Message"></textarea>
                     </div>
                 </div>
                 <ul class="actions special">
                     <li><input value="Send Message" class="button next" type="submit"/></li>
                 </ul>
             </form>
-
         </div>
         <div class="map-responsive">
             <div style="width: 100%">
