@@ -4513,7 +4513,7 @@ body {
 
 #wrapper > * {
     margin: 3.5rem 0 0 0;
-    box-shadow: #77917b 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+    box-shadow: #c0c7c7  0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
 #wrapper > :first-child {
