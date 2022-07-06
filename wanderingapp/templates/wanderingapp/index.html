@@ -189,26 +189,23 @@
             <h2>Get in touch</h2>
         </header>
         <div class="inner special medium">
-            <form action="mailto:ellen@mtbakerweddings.com" name="contactForm" method="get" enctype="application/x-www-form-urlencoded">
+            <form action="." name="contactForm" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
-                <br>
                 <div class="fields">
-                    <div class="field half">
-                        <input name="name" id="name" placeholder="Name" type="text"/>
+                    <!--<div class="field half">
+                        <label for="name"></label><input name="name" id="name" placeholder="Name" type="text" value="{{ name }}"/>
                     </div>
                     <div class="field half">
-                        <input name="email" id="email" placeholder="Email" type="email"/>
+                        <label for="email"></label><input name="email" id="email" placeholder="Email" type="email" value="{{ email }}"/>
+                    </div>-->
+                    <div class="field">
+                        <label for="subject"></label><input name=subject id="subject" placeholder="Your Email" type="text" value="{{ subject }}">
                     </div>
                     <div class="field">
-                        <input name=subject id="subject" placeholder="Subject" type="text">
-                    </div>
-                    <div class="field">
-                        <textarea name="message" id="message" rows="4" placeholder="Message"></textarea>
+                        <label for="message"></label><textarea name="message" id="message" rows="4" placeholder="Message"></textarea>
                     </div>
                 </div>
-                <ul class="actions special">
-                    <li><input value="Send Message" class="button next" type="submit"/></li>
-                </ul>
+                <input value="Send Message" class="button next" type="submit"/>
             </form>
         </div>
         <div class="map-responsive">
