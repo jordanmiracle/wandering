@@ -207,7 +207,7 @@ LOGOUT_REDIRECT_URL = "/"
 
 
 def get_secret():
-    secret_name = "jordanmiraclebucket"
+    secret_name = "wanderingbucket"
     region_name = "us-west-2"
 
     # Create a Secrets Manager client
@@ -286,3 +286,18 @@ STATIC_URL = 'https://%s/%s/' % (AWS_S3_CUSTOM_DOMAIN, AWS_LOCATION)
 PUBLIC_MEDIA_LOCATION = 'media'
 MEDIA_URL = f'https://{AWS_S3_CUSTOM_DOMAIN}/{PUBLIC_MEDIA_LOCATION}/'
 STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
+# Email Settings
+
+EMAIL_HOST = 'smtp.gmail.com'
+#SERVER_EMAIL = 'ellen@mtbakerweddings.com'
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'ellen@mtbakerweddings.com'
+EMAIL_HOST_PASSWORD = 'dahlias4Bees!'
+EMAIL_USE_TLS = True
+EMAIL_USE_SSL = False
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
+
+# This is so the form does not throw insecure warning
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
