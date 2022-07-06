@@ -292,12 +292,22 @@ STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 EMAIL_HOST = 'smtp.gmail.com'
 #SERVER_EMAIL = 'ellen@mtbakerweddings.com'
 EMAIL_PORT = 587
-EMAIL_HOST_USER = 'ellen@mtbakerweddings.com'
-EMAIL_HOST_PASSWORD = 'dahlias4Bees!'
+EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+#AUTH_USER = 'ellenmgehling@gmail.com'
+#AUTH_PASSWORD = 'kzmqnfpffsmmghvu'
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-DEFAULT_FROM_EMAIL = EMAIL_HOST_USER
 
-# This is so the form does not throw insecure warning
+
+## Test Email Settings
+#Email_host = 'localhost'
+#EMAIL_PORT = 1025
+#EMAIL_HOST_USER = ''
+#EMAIL_HOST_PASSWORD = ''
+#EMAIL_USE_TLS = False
+#EMAIL_USE_SSL = False
+
+
 SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
