@@ -10,10 +10,10 @@ from .forms import ContactForm
 from wanderingproject import settings
 from wanderingproject.settings import EMAIL_HOST_USER
 from django.conf import settings
-from wanderingproject import devsettings
+#from wanderingproject import devsettings
 from django.http import HttpResponseRedirect
 from django.core.mail import send_mail, get_connection
-
+from wanderingproject import settings
 
 def blog_view(request):
     posts = Slider.objects.all()
