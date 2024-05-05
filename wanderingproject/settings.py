@@ -317,7 +317,7 @@ LOGGING = {
     },
     'loggers': {
         'django.request': {
-            'handlers': ['jordanmiracle@protonmail.com'],
+            'handlers': ['mail_admins'],
             'level': 'ERROR',
             'propagate': True,
         },
