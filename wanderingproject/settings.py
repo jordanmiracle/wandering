@@ -300,6 +300,9 @@ EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
+SERVER_EMAIL = 'jordanmiracle@protonmail.com'
+
+
 ## Test Email Settings
 #Email_host = 'localhost'
 #EMAIL_PORT = 1025
