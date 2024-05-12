@@ -39,7 +39,7 @@ pytz==2022.1
 rcssmin==1.1.0
 requests==2.31.0
 rjsmin==1.2.2
-s3transfer==0.6.0
+s3transfer==0.10.0
 six==1.16.0
 sorl-thumbnail==12.8.0
 sqlparse==0.4.2
