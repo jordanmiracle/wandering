@@ -289,16 +289,16 @@ STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
 
 # Email Settings
 
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = 'smtp.privateemail.com'
 #SERVER_EMAIL = 'ellen@mtbakerweddings.com'
-EMAIL_PORT = 587
+EMAIL_PORT = 465
 EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
-#EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
-EMAIL_HOST_PASSWORD = rliboromhbgeirty
+EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
+#EMAIL_HOST_PASSWORD = rliboromhbgeirty
 #AUTH_USER = 'ellenmgehling@gmail.com'
 #AUTH_PASSWORD = 'kzmqnfpffsmmghvu'
-EMAIL_USE_TLS = True
-EMAIL_USE_SSL = False
+#EMAIL_USE_TLS = True
+EMAIL_USE_SSL = True
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 
 SERVER_EMAIL = 'jordanmiracle@protonmail.com'
