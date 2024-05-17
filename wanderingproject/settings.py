@@ -299,7 +299,7 @@ EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD')
 EMAIL_USE_TLS = True
 EMAIL_USE_SSL = False
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-#DEFAULT_FROM_EMAIL = 'ellen@mtbakerweddings.com'
+DEFAULT_FROM_EMAIL = ''
 SERVER_EMAIL = 'jordanmiracle@protonmail.com'
 
 
